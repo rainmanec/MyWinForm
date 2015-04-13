@@ -23,8 +23,11 @@ namespace ZHBB
 
         public int id;      // datagridview中行的ID
 
+        public string sql_query;
+        public string sql_count;
         public string sql_where = "";       // 搜索条件
         public SqlParameter[] sql_parms;    // 搜索参数
+
 
         public FrmSearchMingXi()
         {
@@ -38,8 +41,8 @@ namespace ZHBB
             dgv_cars.BorderStyle = BorderStyle.None;
 
             dtp_begin.Value = DateTime.Now.AddDays(-1);
-            this.RefreshRecords();
             Util.InitComboBox(cb_kind, "Kinds", "Title", true);
+            this.LoadRecords();
         }
 
 
@@ -80,104 +83,42 @@ namespace ZHBB
         }
 
         /// <summary>
-        /// 根据搜索条件，判断输入是否要继续“搜索”或“导出”
-        /// </summary>
-        /// <returns></returns>
-        public bool SearchResultNumberDetect()
-        {
-            this.SearchCdnInit();
-            string sql = "SELECT COUNT(*) FROM Records WHERE IsClose = 1 " + this.sql_where;
-            int total = Util.IntTryParse(SqlHelper.GetFirstCellStringBySQL(sql, this.sql_parms));
-            if (total > 50000)
-            {
-                if (MessageBox.Show("记录数大于5万条，确定要继续吗？", "提示", MessageBoxButtons.OKCancel) != DialogResult.OK)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-
-        /// <summary>
-        /// 根据搜索条件，返回DataTable
-        /// </summary>
-        /// <returns></returns>
-        public DataTable GetResultDataTable()
-        {
-            this.SearchCdnInit();
-            string sql = string.Format(@"
-                            SELECT 
-                                 0 as 序号,
-	                            TA.ID, 
-	                            TA.Company AS '采购单位',
-	                            TA.chepai AS '车牌',
-	                            TA.Kind AS '料种',
-	                            TA.NetWeight AS '净重量',
-	                            TA.InWeight AS '进厂重量',
-	                            TA.OutTime AS '出厂重量',
-	                            TA.InTime AS '进厂时间',
-	                            TA.OutTime AS '出厂时间',
-	                            TA.other AS '其他',
-	                            TB.xingming AS '进厂操作员', 
-	                            TC.xingming AS '出厂操作员'
-                            FROM 
-	                            Records AS TA 
-	                            LEFT JOIN Users AS TB ON TA.InUname = TB.uname 
-	                            LEFT JOIN Users AS TC ON TA.OutUname = TC.uname
-                            WHERE IsClose = 1 {0}
-                            ORDER BY TA.OutTime DESC
-                        ", this.sql_where);
-            DataTable table = SqlHelper.GetDataTableBySQL(sql, this.sql_parms);
-            return table;
-        }
-
-        /// <summary>
         /// 显示搜索记录
         /// </summary>
-        public void RefreshRecords()
+        public void LoadRecords()
         {
-            if (this.SearchResultNumberDetect() == false)
-            {
-                return;
-            }
-
-            DataTable table = this.GetResultDataTable();
-            Util.DataTableSetRowNumber(table, "序号");
-
-            DataGridView dgv = dgv_records;
-            Util.DgvClear(dgv);
-            dgv.DataSource = table;
-            Util.DgvColWidth(dgv, "序号", 60);
-            Util.DgvColWidth(dgv, "料种", 60);
-            Util.DgvColHide(dgv, "ID");
-
-            DataGridViewButtonColumn dgv_button_col3 = new DataGridViewButtonColumn();
-            dgv_button_col3.Name = "打印";
-            dgv_button_col3.UseColumnTextForButtonValue = true;
-            dgv_button_col3.Text = "打印";
-            dgv_button_col3.HeaderText = "打印";
-            dgv.Columns.Insert(0, dgv_button_col3);
-            dgv.Columns["打印"].Width = 60;
-            dgv.Columns["打印"].DefaultCellStyle.Padding = new Padding(2, 0, 2, 0);
-
-            DataGridViewButtonColumn dgv_button_col2 = new DataGridViewButtonColumn();
-            dgv_button_col2.Name = "撤销";
-            dgv_button_col2.UseColumnTextForButtonValue = true;
-            dgv_button_col2.Text = "撤销";
-            dgv_button_col2.HeaderText = "撤销";
-            dgv.Columns.Insert(0, dgv_button_col2);
-            dgv.Columns["撤销"].Width = 60;
-            dgv.Columns["撤销"].DefaultCellStyle.Padding = new Padding(2, 0, 2, 0);
-
-            DataGridViewButtonColumn dgv_button_col1 = new DataGridViewButtonColumn();
-            dgv_button_col1.Name = "删除";
-            dgv_button_col1.UseColumnTextForButtonValue = true;
-            dgv_button_col1.Text = "删除";
-            dgv_button_col1.HeaderText = "删除";
-            dgv.Columns.Insert(0, dgv_button_col1);
-            dgv.Columns["删除"].Width = 60;
-            dgv.Columns["删除"].DefaultCellStyle.Padding = new Padding(2, 0, 2, 0);
+            this.SearchCdnInit();
+            this.sql_query = string.Format(@"
+                                    SELECT 
+                                        ROW_NUMBER() OVER(ORDER BY A.rolemc ASC, A.yhbh asc) AS  '序号',
+	                                    TA.ID, 
+	                                    TA.Company AS '采购单位',
+	                                    TA.chepai AS '车牌',
+	                                    TA.Kind AS '料种',
+	                                    TA.NetWeight AS '净重量',
+	                                    TA.InWeight AS '进厂重量',
+	                                    TA.OutTime AS '出厂重量',
+	                                    TA.InTime AS '进厂时间',
+	                                    TA.OutTime AS '出厂时间',
+	                                    TA.other AS '其他',
+	                                    TB.xingming AS '进厂操作员', 
+	                                    TC.xingming AS '出厂操作员'
+                                    FROM 
+	                                    Records AS TA 
+	                                    LEFT JOIN Users AS TB ON TA.InUname = TB.uname 
+	                                    LEFT JOIN Users AS TC ON TA.OutUname = TC.uname
+                                    WHERE IsClose = 1 {0}
+                                    ORDER BY TA.OutTime DESC
+                                ", this.sql_where);
+            this.sql_count = string.Format(@"
+                                    SELECT ISNULL(COUNT(*), 0)
+                                    FROM 
+	                                    Records AS TA 
+	                                    LEFT JOIN Users AS TB ON TA.InUname = TB.uname 
+	                                    LEFT JOIN Users AS TC ON TA.OutUname = TC.uname
+                                    WHERE IsClose = 1 {0}
+                                ", this.sql_where);
+            this.paginator1.Init(Util.IntTryParse(SqlHelper.GetFirstCellStringBySQL(this.sql_count, this.sql_parms)), 100);
         }
 
 
@@ -352,7 +293,7 @@ namespace ZHBB
         /// <param name="e"></param>
         private void btn_submit_Click(object sender, EventArgs e)
         {
-            this.RefreshRecords();
+            this.LoadRecords();
         }
 
         /// <summary>
@@ -362,30 +303,6 @@ namespace ZHBB
         /// <param name="e"></param>
         private void btn_excel_Click(object sender, EventArgs e)
         {
-            if (this.SearchResultNumberDetect() == false)
-            {
-                return;
-            }
-
-            this.saveFileDialog1.Title = "导出数据";
-            this.saveFileDialog1.Filter = "Excel工作簿|*.xls";
-            if (this.saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                // 整理数据
-                DataTable table = this.GetResultDataTable();
-                Util.DataTableRemoveCol(table, "ID");
-                Util.DataTableRemoveCol(table, "序号");
-                // 导出数据
-                string filename = this.saveFileDialog1.FileName;
-                if (Util.ExportExcelWithAspose(table, filename, "明细"))
-                {
-                    MessageBox.Show("导出成功！", "提示");
-                }
-                else
-                {
-                    MessageBox.Show("导出失败", "提示");
-                }
-            }
         }
 
         /// <summary>
@@ -410,7 +327,7 @@ namespace ZHBB
                     if (Util.DeleteRecord(this.id) == true)
                     {
                         MessageBox.Show("删除成功！");
-                        this.RefreshRecords();
+                        this.LoadRecords();
                     }
                     else
                     {
@@ -423,7 +340,7 @@ namespace ZHBB
                 if (Util.CancelRecordOut(this.id) == true)
                 {
                     MessageBox.Show("撤销成功！");
-                    this.RefreshRecords();
+                    this.LoadRecords();
                 }
                 else
                 {
@@ -473,5 +390,79 @@ namespace ZHBB
                 frmRPT.ShowDialog();
             }
         }
+
+        private void paginator1_PageChanged(object sender, int total, int cur, int per)
+        {
+            DataTable table = SqlHelper.GetDataTableBySQL(Util.PaginatorSQL(sql_query, cur, per), this.sql_parms);
+
+            DataGridView dgv = dgv_records;
+            Util.DgvClear(dgv);
+            dgv.DataSource = table;
+            Util.DgvColWidth(dgv, "序号", 60);
+            Util.DgvColWidth(dgv, "料种", 60);
+            Util.DgvColHide(dgv, "ID");
+
+            DataGridViewButtonColumn dgv_button_col3 = new DataGridViewButtonColumn();
+            dgv_button_col3.Name = "打印";
+            dgv_button_col3.UseColumnTextForButtonValue = true;
+            dgv_button_col3.Text = "打印";
+            dgv_button_col3.HeaderText = "打印";
+            dgv.Columns.Insert(0, dgv_button_col3);
+            dgv.Columns["打印"].Width = 60;
+            dgv.Columns["打印"].DefaultCellStyle.Padding = new Padding(2, 0, 2, 0);
+
+            DataGridViewButtonColumn dgv_button_col2 = new DataGridViewButtonColumn();
+            dgv_button_col2.Name = "撤销";
+            dgv_button_col2.UseColumnTextForButtonValue = true;
+            dgv_button_col2.Text = "撤销";
+            dgv_button_col2.HeaderText = "撤销";
+            dgv.Columns.Insert(0, dgv_button_col2);
+            dgv.Columns["撤销"].Width = 60;
+            dgv.Columns["撤销"].DefaultCellStyle.Padding = new Padding(2, 0, 2, 0);
+
+            DataGridViewButtonColumn dgv_button_col1 = new DataGridViewButtonColumn();
+            dgv_button_col1.Name = "删除";
+            dgv_button_col1.UseColumnTextForButtonValue = true;
+            dgv_button_col1.Text = "删除";
+            dgv_button_col1.HeaderText = "删除";
+            dgv.Columns.Insert(0, dgv_button_col1);
+            dgv.Columns["删除"].Width = 60;
+            dgv.Columns["删除"].DefaultCellStyle.Padding = new Padding(2, 0, 2, 0);
+
+        }
+
+        private void paginator1_ExportExcel(object sender, int total, int cur, int per)
+        {
+
+            this.saveFileDialog1.Title = "导出数据";
+            this.saveFileDialog1.Filter = "Excel工作簿|*.xls";
+            if (this.saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // 整理数据
+                DataTable table = SqlHelper.GetDataTableBySQL(this.sql_query, this.sql_parms);
+                Util.DataTableRemoveCol(table, "ID");
+                // 数量过大
+                if (table.Rows.Count > 50000)
+                {
+                    if (MessageBox.Show("记录数大于5万条，确定要继续吗？", "提示", MessageBoxButtons.OKCancel) != DialogResult.OK)
+                    {
+                        return;
+                    }
+                }
+                Util.DataTableRemoveCol(table, "ID");
+                Util.DataTableRemoveCol(table, "序号");
+                // 导出数据
+                string filename = this.saveFileDialog1.FileName;
+                if (Util.ExportExcelWithAspose(table, filename, "明细"))
+                {
+                    MessageBox.Show("导出成功！", "提示");
+                }
+                else
+                {
+                    MessageBox.Show("导出失败", "提示");
+                }
+            }
+        }
+
     }
 }

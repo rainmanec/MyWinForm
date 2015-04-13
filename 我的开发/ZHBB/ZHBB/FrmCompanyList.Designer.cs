@@ -33,22 +33,22 @@
             this.tb_serch = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.dgv_main = new System.Windows.Forms.DataGridView();
-            this.btn_excel = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.paginator1 = new MYUI.Paginator();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_excel);
+            this.panel1.Controls.Add(this.paginator1);
             this.panel1.Controls.Add(this.btn_car_add);
             this.panel1.Controls.Add(this.tb_serch);
             this.panel1.Controls.Add(this.btn_search);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(623, 50);
+            this.panel1.Size = new System.Drawing.Size(906, 50);
             this.panel1.TabIndex = 0;
             // 
             // btn_car_add
@@ -89,25 +89,24 @@
             this.dgv_main.Location = new System.Drawing.Point(0, 50);
             this.dgv_main.Name = "dgv_main";
             this.dgv_main.RowTemplate.Height = 23;
-            this.dgv_main.Size = new System.Drawing.Size(623, 336);
+            this.dgv_main.Size = new System.Drawing.Size(906, 336);
             this.dgv_main.TabIndex = 1;
             this.dgv_main.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_main_CellContentClick);
             // 
-            // btn_excel
+            // paginator1
             // 
-            this.btn_excel.Location = new System.Drawing.Point(482, 13);
-            this.btn_excel.Name = "btn_excel";
-            this.btn_excel.Size = new System.Drawing.Size(93, 23);
-            this.btn_excel.TabIndex = 4;
-            this.btn_excel.Text = "导出所有单位";
-            this.btn_excel.UseVisualStyleBackColor = true;
-            this.btn_excel.Click += new System.EventHandler(this.btn_excel_Click);
+            this.paginator1.Location = new System.Drawing.Point(483, 11);
+            this.paginator1.Name = "paginator1";
+            this.paginator1.Size = new System.Drawing.Size(382, 23);
+            this.paginator1.TabIndex = 5;
+            this.paginator1.PageChanged += new MYUI.Paginator.PageChangeHandle(this.paginator1_PageChanged);
+            this.paginator1.ExportExcel += new MYUI.Paginator.ExportExcelHandle(this.paginator1_ExportExcel);
             // 
             // FrmCompanyList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 386);
+            this.ClientSize = new System.Drawing.Size(906, 386);
             this.Controls.Add(this.dgv_main);
             this.Controls.Add(this.panel1);
             this.Name = "FrmCompanyList";
@@ -128,7 +127,7 @@
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.TextBox tb_serch;
         private System.Windows.Forms.Button btn_car_add;
-        private System.Windows.Forms.Button btn_excel;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private MYUI.Paginator paginator1;
     }
 }

@@ -88,7 +88,9 @@ namespace ZHBB
         {
             this.SearchCdnInit();
             string sql = string.Format(@"
-                            SELECT 0 as '序号', {0}, SUM(NetWeight) as NetWeight 
+                            SELECT 
+                                ROW_NUMBER() OVER(ORDER BY A.rolemc ASC, A.yhbh asc) AS  '序号',
+                                {0}, SUM(NetWeight) as NetWeight 
                             FROM Records 
                             WHERE IsClose = 1 {1}
                             GROUP BY {2}
@@ -114,11 +116,8 @@ namespace ZHBB
         /// </summary>
         public void RefreshRecords()
         {
-            // 合计
-            this.RefreshSum();
-            //查询
-            DataTable table = this.GetResultDataTable();
-            Util.DataTableSetRowNumber(table, "序号", true);
+            this.RefreshSum();  // 合计
+            DataTable table = this.GetResultDataTable();    //查询
 
             DataGridView dgv = dgv_records;
             Util.DgvClear(dgv);

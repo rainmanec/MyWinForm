@@ -18,8 +18,6 @@ namespace ZHBB
             // 连接字符串
             //SqlHelper.ConnectionString = Util.decode(System.Web.HttpUtility.UrlDecode(TransferData.CntString));
             SqlHelper.ConnectionString = System.Web.HttpUtility.UrlDecode(TransferData.CntString);
-            string str = "康，长,安.";
-            MessageBox.Show(Util.GetChineseSpell(str, true));
             Application.Run(new FrmMain());
         }
     }

@@ -103,9 +103,9 @@
             // 
             this.btnExport.Location = new System.Drawing.Point(327, 0);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(76, 23);
+            this.btnExport.Size = new System.Drawing.Size(55, 23);
             this.btnExport.TabIndex = 7;
-            this.btnExport.Text = "导出Excel";
+            this.btnExport.Text = "导出";
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
@@ -131,7 +131,7 @@
             this.Controls.Add(this.btnPrev);
             this.Controls.Add(this.btnFirst);
             this.Name = "Paginator";
-            this.Size = new System.Drawing.Size(402, 23);
+            this.Size = new System.Drawing.Size(382, 23);
             this.ResumeLayout(false);
             this.PerformLayout();
 

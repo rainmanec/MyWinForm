@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZHBB", "ZHBB\ZHBB.csproj", "{7EFC2411-6A3B-4A8F-A926-B322972012AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyUI", "..\..\MyUI\MyUI.csproj", "{6EF6DD55-27DB-4E1E-B916-6C4430AA7B97}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyUI", "..\MyUI\MyUI.csproj", "{6EF6DD55-27DB-4E1E-B916-6C4430AA7B97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

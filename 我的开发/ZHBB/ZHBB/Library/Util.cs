@@ -100,7 +100,7 @@ namespace ZHBB
         {
             int begin = (cur - 1) * per + 1;
             int end = cur * per;
-            return string.Format("SELECT * FROM ({0}) AS TB WHERE {1} BETWEEN {2} and {3}", sql, col, begin.ToString(), end.ToString());
+            return string.Format("SELECT * FROM ({0}) AS TTBB WHERE {1} BETWEEN {2} and {3}", sql, col, begin.ToString(), end.ToString());
         }
 
         /// <summary>
@@ -110,9 +110,9 @@ namespace ZHBB
         /// <param name="cur">当前页</param>
         /// <param name="per">每页数量</param>
         /// <returns></returns>
-        public static string PaginatorSQL(string sql, int page, int per)
+        public static string PaginatorSQL(string sql, int cur, int per)
         {
-            return Util.PaginatorSQL(sql, "序号", page, per);
+            return Util.PaginatorSQL(sql, "序号", cur, per);
         }
 
         #endregion

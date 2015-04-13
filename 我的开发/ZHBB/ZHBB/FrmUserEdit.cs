@@ -147,7 +147,7 @@ namespace ZHBB
             tb_password.Text = row["password"].ToString();
             tb_phone.Text = row["phone"].ToString();
             tb_beizhu.Text = row["beizhu"].ToString();
-            cb_roleid.SelectedIndex = Util.StrToInt(row["roleid"].ToString());
+            cb_roleid.SelectedIndex = Util.IntTryParse(row["roleid"].ToString());
         }
 
     }

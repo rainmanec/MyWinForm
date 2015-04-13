@@ -62,7 +62,7 @@ namespace MYUI
         /// <summary>
         /// 每页显示的数量，只读
         /// </summary>
-        private int per = 1;
+        private int per = 20;
         public int Per
         {
             get
@@ -96,10 +96,18 @@ namespace MYUI
             this.Init(sum, 1, per, true);
         }
 
+        /// <summary>
+        /// 刷新当前页
+        /// </summary>
+        public void Rrefresh()
+        {
+            this.Jump(this.cur);
+        }
+
         public Paginator()
         {
             InitializeComponent();
-            this.Init(0, 1, 1, true);
+            this.Init(0, 1, 20, true);
         }
 
         /// <summary>

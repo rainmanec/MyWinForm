@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_excel = new System.Windows.Forms.Button();
+            this.paginator1 = new MYUI.Paginator();
             this.cb_kind = new System.Windows.Forms.ComboBox();
             this.dtp_end = new System.Windows.Forms.DateTimePicker();
             this.dtp_begin = new System.Windows.Forms.DateTimePicker();
@@ -52,7 +52,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_excel);
+            this.panel1.Controls.Add(this.paginator1);
             this.panel1.Controls.Add(this.cb_kind);
             this.panel1.Controls.Add(this.dtp_end);
             this.panel1.Controls.Add(this.dtp_begin);
@@ -66,19 +66,17 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(847, 139);
+            this.panel1.Size = new System.Drawing.Size(847, 137);
             this.panel1.TabIndex = 0;
             // 
-            // btn_excel
+            // paginator1
             // 
-            this.btn_excel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_excel.Location = new System.Drawing.Point(364, 71);
-            this.btn_excel.Name = "btn_excel";
-            this.btn_excel.Size = new System.Drawing.Size(130, 47);
-            this.btn_excel.TabIndex = 21;
-            this.btn_excel.Text = "导出Excel";
-            this.btn_excel.UseVisualStyleBackColor = true;
-            this.btn_excel.Click += new System.EventHandler(this.btn_excel_Click);
+            this.paginator1.Location = new System.Drawing.Point(373, 98);
+            this.paginator1.Name = "paginator1";
+            this.paginator1.Size = new System.Drawing.Size(389, 23);
+            this.paginator1.TabIndex = 22;
+            this.paginator1.PageChanged += new MYUI.Paginator.PageChangeHandle(this.paginator1_PageChanged);
+            this.paginator1.ExportExcel += new MYUI.Paginator.ExportExcelHandle(this.paginator1_ExportExcel);
             // 
             // cb_kind
             // 
@@ -137,9 +135,9 @@
             // btn_submit
             // 
             this.btn_submit.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_submit.Location = new System.Drawing.Point(364, 13);
+            this.btn_submit.Location = new System.Drawing.Point(373, 10);
             this.btn_submit.Name = "btn_submit";
-            this.btn_submit.Size = new System.Drawing.Size(130, 47);
+            this.btn_submit.Size = new System.Drawing.Size(141, 79);
             this.btn_submit.TabIndex = 5;
             this.btn_submit.Text = "提交";
             this.btn_submit.UseVisualStyleBackColor = true;
@@ -184,7 +182,7 @@
             this.dgv_cars.AllowUserToResizeRows = false;
             this.dgv_cars.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_cars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_cars.Location = new System.Drawing.Point(558, 159);
+            this.dgv_cars.Location = new System.Drawing.Point(563, 207);
             this.dgv_cars.MultiSelect = false;
             this.dgv_cars.Name = "dgv_cars";
             this.dgv_cars.ReadOnly = true;
@@ -201,11 +199,11 @@
             this.dgv_records.AllowUserToResizeRows = false;
             this.dgv_records.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_records.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_records.Location = new System.Drawing.Point(0, 139);
+            this.dgv_records.Location = new System.Drawing.Point(0, 137);
             this.dgv_records.Name = "dgv_records";
             this.dgv_records.ReadOnly = true;
             this.dgv_records.RowTemplate.Height = 23;
-            this.dgv_records.Size = new System.Drawing.Size(847, 374);
+            this.dgv_records.Size = new System.Drawing.Size(847, 376);
             this.dgv_records.TabIndex = 1;
             this.dgv_records.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_in_records_CellContentClick);
             // 
@@ -217,7 +215,7 @@
             this.dgv_company.AllowUserToResizeRows = false;
             this.dgv_company.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_company.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_company.Location = new System.Drawing.Point(254, 159);
+            this.dgv_company.Location = new System.Drawing.Point(255, 207);
             this.dgv_company.MultiSelect = false;
             this.dgv_company.Name = "dgv_company";
             this.dgv_company.ReadOnly = true;
@@ -265,8 +263,8 @@
         private System.Windows.Forms.DateTimePicker dtp_begin;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cb_kind;
-        private System.Windows.Forms.Button btn_excel;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private MYUI.Paginator paginator1;
 
     }
 }
