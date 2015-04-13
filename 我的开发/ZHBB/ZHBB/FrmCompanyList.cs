@@ -42,15 +42,15 @@ namespace ZHBB
             string search = this.tb_serch.Text.Trim().Replace("'", "");
             this.sql_query = string.Format(@"
                         SELECT 
-                            ROW_NUMBER() OVER(ORDER BY A.rolemc ASC, A.yhbh asc) AS  '序号',
+                            ROW_NUMBER() OVER(ORDER BY ID DESC) AS  '序号',
                             ID,
                             Gsm as '采购单位',
                             owner as '单位负责人',
                             phone as '电话',
                             address as '地址',
                             beizhu as '备注'
-                        FROM Company WHERE Gsm like '%{0}%' OR beizhu like '%{0}%' ORDER BY ID DESC", search);
-            this.sql_count = string.Format(@"SELECT ISNULL(COUNT(*), 0) FROM Company WHERE Gsm like '%{0}%' OR beizhu like '%{0}%' ORDER BY ID DESC", search);
+                        FROM Company WHERE Gsm like '%{0}%' OR beizhu like '%{0}%'", search);
+            this.sql_count = string.Format(@"SELECT ISNULL(COUNT(*), 0) FROM Company WHERE Gsm like '%{0}%' OR beizhu like '%{0}%'", search);
             this.paginator1.Init(Util.IntTryParse(SqlHelper.GetFirstCellStringBySQL(this.sql_count)), 100);
         }
 

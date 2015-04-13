@@ -99,7 +99,7 @@ namespace MYUI
         /// <summary>
         /// 刷新当前页
         /// </summary>
-        public void Rrefresh()
+        public void Refresh()
         {
             this.Jump(this.cur);
         }
@@ -193,6 +193,16 @@ namespace MYUI
             if (this.ExportExcel != null)
             {
                 this.ExportExcel(this, this.total, this.cur, this.per);
+            }
+        }
+
+        private void tbCur_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                int p;
+                int.TryParse(tbCur.Text.Trim(), out p);
+                this.Jump(p);
             }
         }
 

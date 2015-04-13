@@ -89,6 +89,7 @@
             this.tbCur.Size = new System.Drawing.Size(40, 21);
             this.tbCur.TabIndex = 4;
             this.tbCur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbCur.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbCur_KeyDown);
             // 
             // lbInfo
             // 

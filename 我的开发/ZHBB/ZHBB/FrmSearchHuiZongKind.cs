@@ -89,13 +89,12 @@ namespace ZHBB
             this.SearchCdnInit();
             string sql = string.Format(@"
                             SELECT 
-                                ROW_NUMBER() OVER(ORDER BY A.rolemc ASC, A.yhbh asc) AS  '序号',
-                                {0}, SUM(NetWeight) as NetWeight 
+                                ROW_NUMBER() OVER(ORDER BY {0}) AS  '序号',
+                                {1}, SUM(NetWeight) as NetWeight 
                             FROM Records 
-                            WHERE IsClose = 1 {1}
-                            GROUP BY {2}
-                            ORDER BY {3}
-                        ", this.sql_fields, this.sql_where, this.sql_group, this.sql_order);
+                            WHERE IsClose = 1 {2}
+                            GROUP BY {3}
+                        ", this.sql_order, this.sql_fields, this.sql_where, this.sql_group);
             DataTable table = SqlHelper.GetDataTableBySQL(sql, this.sql_parms);
             return table;
         }

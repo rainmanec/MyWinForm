@@ -30,7 +30,7 @@ namespace ZHBB
         {
             this.sql_query = string.Format(@"
                                 SELECT
-                                    ROW_NUMBER() OVER(ORDER BY A.rolemc ASC, A.yhbh asc) AS  '序号',
+                                    ROW_NUMBER() OVER(ORDER BY Records.ID ASC) AS  '序号',
                                     Records.ID,
 	                                Records.chepai AS '车牌',
 	                                Records.Company AS '采购单位',
@@ -38,8 +38,7 @@ namespace ZHBB
 	                                Records.InTime AS '进厂时间',
 	                                USERS.xingming AS '进厂操作员'
                                 FROM Records LEFT JOIN Users ON Records.InUname = Users.uname
-                                WHERE IsClose <> 1 ORDER BY Records.ID ASC
-                                ");
+                                WHERE IsClose <> 1");
             this.sql_count = string.Format(@"SELECT ISNULL(COUNT(*), 0) FROM Records WHERE IsClose <> 1");
             this.paginator1.Init(Util.IntTryParse(SqlHelper.GetFirstCellStringBySQL(this.sql_count)), 1, 100, false);
         }
@@ -56,6 +55,7 @@ namespace ZHBB
             {
                 int affect = SqlHelper.ExecuteNonQuery("DELETE FROM Records WHERE IsClose <> 1");
                 MessageBox.Show("共删除" + affect.ToString() + "条数据！");
+                this.LoadData();
             }
 
         }

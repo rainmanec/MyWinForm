@@ -13,8 +13,6 @@ namespace ZHBB
 {
     public partial class FrmCarEdit : Form
     {
-        public bool IsEdited = false;  // 是否添加过用户
-
         public int id;
 
         public FrmCarEdit()
@@ -97,25 +95,12 @@ namespace ZHBB
             {
                 MessageBox.Show("编辑成功！");
                 //Util.console_log(string.Format("添加项目：{0}（{1}） {2}", tb_xingming.Text, tb_uname.Text, cbProject_bd.Text));
-                this.IsEdited = true;
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else
             {
                 MessageBox.Show("添加失败！");
-            }
-        }
-
-        // 窗体关闭事件
-        private void FrmProjectAdd_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (this.IsEdited == true)
-            {
-                this.DialogResult = DialogResult.OK;
-            }
-            else
-            {
-                this.DialogResult = DialogResult.Cancel;
             }
         }
 

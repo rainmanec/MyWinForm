@@ -179,7 +179,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "FrmCarEdit";
             this.Text = "编辑车辆";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmProjectAdd_FormClosing);
             this.Load += new System.EventHandler(this.FrmCarEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

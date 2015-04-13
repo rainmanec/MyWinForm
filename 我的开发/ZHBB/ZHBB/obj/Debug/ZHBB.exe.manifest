@@ -219,19 +219,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>pOdhui8tkYeRLF4FM2LEU3EcxOw=</dsig:DigestValue>
+        <dsig:DigestValue>1NDUDHwqkMwiMna3Nxt8+9bHQyU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZHBB.exe" size="215040">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZHBB.exe" size="214528">
       <assemblyIdentity name="ZHBB" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>u9qdlGV19tpV5n07tdFp5YV8fso=</dsig:DigestValue>
+        <dsig:DigestValue>q6QLBk6jFrRafi1EWCTX2RSc61o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

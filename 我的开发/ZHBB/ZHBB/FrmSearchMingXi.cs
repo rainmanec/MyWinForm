@@ -90,8 +90,8 @@ namespace ZHBB
             this.SearchCdnInit();
             this.sql_query = string.Format(@"
                                     SELECT 
-                                        ROW_NUMBER() OVER(ORDER BY A.rolemc ASC, A.yhbh asc) AS  '序号',
-	                                    TA.ID, 
+                                        ROW_NUMBER() OVER(ORDER BY TA.OutTime DESC) AS  '序号',
+	                                    TA.ID AS 'ID', 
 	                                    TA.Company AS '采购单位',
 	                                    TA.chepai AS '车牌',
 	                                    TA.Kind AS '料种',
@@ -108,7 +108,6 @@ namespace ZHBB
 	                                    LEFT JOIN Users AS TB ON TA.InUname = TB.uname 
 	                                    LEFT JOIN Users AS TC ON TA.OutUname = TC.uname
                                     WHERE IsClose = 1 {0}
-                                    ORDER BY TA.OutTime DESC
                                 ", this.sql_where);
             this.sql_count = string.Format(@"
                                     SELECT ISNULL(COUNT(*), 0)
@@ -449,8 +448,6 @@ namespace ZHBB
                         return;
                     }
                 }
-                Util.DataTableRemoveCol(table, "ID");
-                Util.DataTableRemoveCol(table, "序号");
                 // 导出数据
                 string filename = this.saveFileDialog1.FileName;
                 if (Util.ExportExcelWithAspose(table, filename, "明细"))
