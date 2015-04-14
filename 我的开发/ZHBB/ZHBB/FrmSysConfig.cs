@@ -41,32 +41,6 @@ namespace ZHBB
                 this.cb_person.Enabled = false;
                 this.cb_sensor.Enabled = false;
             }
-
-
-            // 纸张
-            string Paper1 = Util.GetAppConfig("PaperName");
-            for(int i = 0, length = printDoc.PrinterSettings.PaperSizes.Count; i < length;i++)
-            {
-                PaperSize ps = printDoc.PrinterSettings.PaperSizes[i];
-                this.cb_paper1.Items.Add(ps.PaperName);
-                if (ps.PaperName == Paper1)
-                {
-                    this.cb_paper1.SelectedIndex = i;
-                }
-            }
-
-            // 串口
-            string PortName = Util.GetAppConfig("PortName");
-            string[] ports = SerialPort.GetPortNames();
-            Array.Sort(ports);
-            for (int i = 0, length = ports.Length - 1; i < length; i++)
-            {
-                this.cb_port1.Items.Add(ports[i]);
-                if (ports[i] == PortName)
-                {
-                    this.cb_port1.SelectedIndex = i;
-                }
-            }
         }
 
 
@@ -91,14 +65,6 @@ namespace ZHBB
 
         private void btn_submit_Click(object sender, EventArgs e)
         {
-            if (this.cb_port1.Text.Trim() != "")
-            {
-                Util.SetAppConfig("PortName", this.cb_port1.Text.Trim());
-            }
-            if (this.cb_paper1.Text.Trim() != "")
-            {
-                Util.SetAppConfig("PaperName", this.cb_paper1.Text.Trim());
-            }
             bool result = Util.SetDbConfig("IsSensor", this.IsSensor.ToString());
             if (result)
             {

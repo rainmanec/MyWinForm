@@ -21,10 +21,20 @@ namespace ZHBB
             InitializeComponent();
         }
 
+        private void FrmListUser_Load(object sender, EventArgs e)
+        {
+            this.LoadData();
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            this.LoadData();
+        }
+
         /// <summary>
         /// 重置分页，并加载数据
         /// </summary>
-        public void LoadUsers()
+        public void LoadData()
         {
             string search = tb_serch.Text.Trim().Replace("'", "").ToUpper();
             this.sql_query = string.Format(@"
@@ -41,15 +51,28 @@ namespace ZHBB
             this.paginator1.Init(Util.IntTryParse(SqlHelper.GetFirstCellStringBySQL(this.sql_count)), 100);
         }
 
-        private void FrmListUser_Load(object sender, EventArgs e)
+        /// <summary>
+        /// 回车键执行搜索
+        /// </summary>
+        private void tb_serch_KeyUp(object sender, KeyEventArgs e)
         {
-            this.LoadUsers();
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.LoadData();
+            }
         }
 
-        private void btn_search_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 添加车辆
+        /// </summary>
+        private void btn_car_add_Click(object sender, EventArgs e)
         {
-            this.LoadUsers();
-        }        
+            FrmCarAdd frm = new FrmCarAdd();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                this.paginator1.Refresh();
+            }
+        }      
 
         /// <summary>
         /// 编辑和删除事件
@@ -92,29 +115,6 @@ namespace ZHBB
                 }
             }
 
-        }
-
-        /// <summary>
-        /// 回车键执行搜索
-        /// </summary>
-        private void tb_serch_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                this.LoadUsers();
-            }
-        }
-
-        /// <summary>
-        /// 添加车辆
-        /// </summary>
-        private void btn_car_add_Click(object sender, EventArgs e)
-        {
-            FrmCarAdd frm = new FrmCarAdd();
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                this.paginator1.Refresh();
-            }
         }
 
         /// <summary>

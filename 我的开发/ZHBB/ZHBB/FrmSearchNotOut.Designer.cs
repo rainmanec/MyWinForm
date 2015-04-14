@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_delete_all = new System.Windows.Forms.Button();
+            this.paginator1 = new MYUI.Paginator();
             this.btn_search = new System.Windows.Forms.Button();
             this.dgv_main = new System.Windows.Forms.DataGridView();
-            this.paginator1 = new MYUI.Paginator();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_delete_all);
             this.panel1.Controls.Add(this.paginator1);
             this.panel1.Controls.Add(this.btn_search);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -48,6 +48,24 @@
             this.panel1.Size = new System.Drawing.Size(662, 50);
             this.panel1.TabIndex = 0;
             this.panel1.Tag = "FrmSearchNotOut";
+            // 
+            // btn_delete_all
+            // 
+            this.btn_delete_all.Location = new System.Drawing.Point(108, 13);
+            this.btn_delete_all.Name = "btn_delete_all";
+            this.btn_delete_all.Size = new System.Drawing.Size(95, 23);
+            this.btn_delete_all.TabIndex = 4;
+            this.btn_delete_all.Text = "删除所有记录";
+            this.btn_delete_all.UseVisualStyleBackColor = true;
+            this.btn_delete_all.Click += new System.EventHandler(this.btn_delete_all_Click);
+            // 
+            // paginator1
+            // 
+            this.paginator1.Location = new System.Drawing.Point(232, 13);
+            this.paginator1.Name = "paginator1";
+            this.paginator1.Size = new System.Drawing.Size(382, 23);
+            this.paginator1.TabIndex = 3;
+            this.paginator1.PageChanged += new MYUI.Paginator.PageChangeHandle(this.paginator1_PageChanged);
             // 
             // btn_search
             // 
@@ -73,24 +91,6 @@
             this.dgv_main.TabIndex = 1;
             this.dgv_main.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_main_CellContentClick);
             // 
-            // paginator1
-            // 
-            this.paginator1.Location = new System.Drawing.Point(243, 13);
-            this.paginator1.Name = "paginator1";
-            this.paginator1.Size = new System.Drawing.Size(382, 23);
-            this.paginator1.TabIndex = 3;
-            this.paginator1.PageChanged += new MYUI.Paginator.PageChangeHandle(this.paginator1_PageChanged);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(105, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "删除所有记录";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FrmSearchNotOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -114,6 +114,6 @@
         private System.Windows.Forms.DataGridView dgv_main;
         private System.Windows.Forms.Button btn_search;
         private MYUI.Paginator paginator1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_delete_all;
     }
 }

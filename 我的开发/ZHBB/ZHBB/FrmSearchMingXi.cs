@@ -36,13 +36,12 @@ namespace ZHBB
 
         private void FrmRecordAdd_Load(object sender, EventArgs e)
         {
-            this.p_car = new Point(tb_chepai.Left, tb_chepai.Top + tb_chepai.Height);
-            this.p_cp = new Point(tb_cp.Left, tb_cp.Top + tb_cp.Height);
+            this.p_car = new Point(tb_chepai.Left, tb_chepai.Top + tb_chepai.Height);   // 车辆文本框Location
+            this.p_cp = new Point(tb_cp.Left, tb_cp.Top + tb_cp.Height);                // 单位文本框Location
             dgv_cars.BorderStyle = BorderStyle.None;
-
-            dtp_begin.Value = DateTime.Now.AddDays(-1);
-            Util.InitComboBox(cb_kind, "Kinds", "Title", true);
-            this.LoadRecords();
+            dtp_begin.Value = DateTime.Now.AddDays(-1);                                 // 开始日期
+            Util.InitComboBox(cb_kind, "Kinds", "Title", true);                         // 料种
+            this.LoadData();
         }
 
 
@@ -85,7 +84,7 @@ namespace ZHBB
         /// <summary>
         /// 显示搜索记录
         /// </summary>
-        public void LoadRecords()
+        public void LoadData()
         {
             this.SearchCdnInit();
             this.sql_query = string.Format(@"
@@ -120,9 +119,9 @@ namespace ZHBB
             this.paginator1.Init(Util.IntTryParse(SqlHelper.GetFirstCellStringBySQL(this.sql_count, this.sql_parms)), 100);
         }
 
-
-
-        // 车牌号文本框：根据车牌号搜索
+        /// <summary>
+        /// 车牌号文本框：根据车牌号搜索
+        /// </summary>
         private void tb_chepai_TextChanged(object sender, EventArgs e)
         {
             bool IsResetDgv = true;
@@ -151,11 +150,10 @@ namespace ZHBB
         /// <summary>
         /// 车牌号文本框：Enter键
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void tb_chepai_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             DataGridView dgv = this.dgv_cars;
+            // 上下键
             if (e.KeyCode == Keys.Down || e.KeyCode == Keys.Up)
             {
                 int rowsCount = dgv.Rows.Count;
@@ -173,6 +171,7 @@ namespace ZHBB
                     dgv.CurrentCell = dgv.Rows[rowIndex].Cells[0];
                 }
             }
+            // Enter键
             if (e.KeyCode == Keys.Enter)
             {
                 if (dgv.Rows.Count > 0)
@@ -193,8 +192,6 @@ namespace ZHBB
         /// <summary>
         /// 车牌号：焦点离开事件
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void tb_chepai_Leave(object sender, EventArgs e)
         {
             dgv_cars.DataSource = null;
@@ -205,8 +202,6 @@ namespace ZHBB
         /// <summary>
         /// 采购单位：Value变化事件
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void tb_cp_TextChanged(object sender, EventArgs e)
         {
             bool IsResetDgv = true;
@@ -235,12 +230,10 @@ namespace ZHBB
         /// <summary>
         /// 采购单位：键盘事件
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void tb_cp_KeyDown(object sender, KeyEventArgs e)
         {
             DataGridView dgv = this.dgv_company;
-            // 回车
+            // 上下键
             if (e.KeyCode == Keys.Down || e.KeyCode == Keys.Up)
             {
                 int rowsCount = dgv.Rows.Count;
@@ -258,7 +251,7 @@ namespace ZHBB
                     dgv.CurrentCell = dgv.Rows[rowIndex].Cells[0];
                 }
             }
-            // Enter
+            // Enter键
             if (e.KeyCode == Keys.Enter)
             {
                 if (dgv.Rows.Count > 0)
@@ -277,8 +270,6 @@ namespace ZHBB
         /// <summary>
         /// 采购单位：失去焦点事件
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void tb_cp_Leave(object sender, EventArgs e)
         {
             dgv_company.DataSource = null;
@@ -288,27 +279,14 @@ namespace ZHBB
         /// <summary>
         /// 搜索按钮
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btn_submit_Click(object sender, EventArgs e)
         {
-            this.LoadRecords();
-        }
-
-        /// <summary>
-        /// 导出Excel
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btn_excel_Click(object sender, EventArgs e)
-        {
+            this.LoadData();
         }
 
         /// <summary>
         /// 删除，撤销，打印
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void dgv_in_records_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // 如果点击的是表头则退出
@@ -326,7 +304,7 @@ namespace ZHBB
                     if (Util.DeleteRecord(this.id) == true)
                     {
                         MessageBox.Show("删除成功！");
-                        this.LoadRecords();
+                        this.paginator1.Refresh();
                     }
                     else
                     {
@@ -339,7 +317,7 @@ namespace ZHBB
                 if (Util.CancelRecordOut(this.id) == true)
                 {
                     MessageBox.Show("撤销成功！");
-                    this.LoadRecords();
+                    this.paginator1.Refresh();
                 }
                 else
                 {
@@ -394,7 +372,7 @@ namespace ZHBB
         {
             DataTable table = SqlHelper.GetDataTableBySQL(Util.PaginatorSQL(sql_query, cur, per), this.sql_parms);
 
-            DataGridView dgv = dgv_records;
+            DataGridView dgv = this.dgv_records;
             Util.DgvClear(dgv);
             dgv.DataSource = table;
             Util.DgvColWidth(dgv, "序号", 60);

@@ -49,7 +49,7 @@ namespace ZHBB
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_delete_all_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("您确定要删除所有未出厂记录吗？", "提示", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
@@ -57,7 +57,6 @@ namespace ZHBB
                 MessageBox.Show("共删除" + affect.ToString() + "条数据！");
                 this.LoadData();
             }
-
         }
 
         private void dgv_main_CellContentClick(object sender, DataGridViewCellEventArgs e)

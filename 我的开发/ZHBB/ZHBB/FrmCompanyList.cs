@@ -27,15 +27,7 @@ namespace ZHBB
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        private void btn_search_Click(object sender, EventArgs e)
-        {
-            this.LoadData();
-        }
-
-        /// <summary>
-        /// 
+        /// 加载搜索结果
         /// </summary>
         public void LoadData()
         {
@@ -52,6 +44,38 @@ namespace ZHBB
                         FROM Company WHERE Gsm like '%{0}%' OR beizhu like '%{0}%'", search);
             this.sql_count = string.Format(@"SELECT ISNULL(COUNT(*), 0) FROM Company WHERE Gsm like '%{0}%' OR beizhu like '%{0}%'", search);
             this.paginator1.Init(Util.IntTryParse(SqlHelper.GetFirstCellStringBySQL(this.sql_count)), 100);
+        }
+
+        /// <summary>
+        /// 搜索按钮点击事件
+        /// </summary>
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            this.LoadData();
+        }
+
+
+        /// <summary>
+        /// 文本框Enter事件
+        /// </summary>
+        private void tb_serch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.LoadData();
+            }
+        }
+
+        /// <summary>
+        /// 添加车辆事件
+        /// </summary>
+        private void btn_car_add_Click(object sender, EventArgs e)
+        {
+            FrmCompanyAdd frm = new FrmCompanyAdd();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                this.paginator1.Refresh();
+            }
         }
 
         /// <summary>
@@ -98,30 +122,7 @@ namespace ZHBB
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        private void tb_serch_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                this.LoadData();
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        private void btn_car_add_Click(object sender, EventArgs e)
-        {
-            FrmCompanyAdd frm = new FrmCompanyAdd();
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                this.paginator1.Refresh();
-            }
-        }
-
-        /// <summary>
-        /// 
+        /// 分页事件
         /// </summary>
         private void paginator1_PageChanged(object sender, int total, int cur, int per)
         {
@@ -152,7 +153,7 @@ namespace ZHBB
         }
 
         /// <summary>
-        /// 
+        /// 导出数据
         /// </summary>
         private void paginator1_ExportExcel(object sender, int total, int cur, int per)
         {
