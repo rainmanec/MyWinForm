@@ -12,3 +12,5 @@ C:\Users\rainman\Documents\GitHub\MyWinForm\我的开发\MyUI\obj\Debug\MyUI.dll
 C:\Users\rainman\Documents\GitHub\MyWinForm\我的开发\MyUI\obj\Debug\MyUI.pdb
 C:\Users\Administrator\Documents\GitHub\MyWinForm\我的开发\MyUI\obj\Debug\MyUI.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Documents\GitHub\MyWinForm\我的开发\MyUI\obj\Debug\MyUI.Properties.Resources.resources
+C:\Users\rainman\Documents\GitHub\MyWinForm\我的开发\MyUI\obj\Debug\MyUI.csprojResolveAssemblyReference.cache
+C:\Users\rainman\Documents\GitHub\MyWinForm\我的开发\MyUI\obj\Debug\MyUI.Properties.Resources.resources

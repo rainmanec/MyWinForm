@@ -235,7 +235,7 @@
             this.Controls.Add(this.dgv_records);
             this.Controls.Add(this.panel1);
             this.Name = "FrmSearchMingXi";
-            this.Tag = "RecordIn";
+            this.Tag = "FrmSearchMingXi";
             this.Text = "明细查询";
             this.Load += new System.EventHandler(this.FrmRecordAdd_Load);
             this.panel1.ResumeLayout(false);
