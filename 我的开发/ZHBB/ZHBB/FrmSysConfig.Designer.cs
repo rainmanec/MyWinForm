@@ -39,9 +39,9 @@
             // 
             // btn_submit
             // 
-            this.btn_submit.Location = new System.Drawing.Point(128, 57);
+            this.btn_submit.Location = new System.Drawing.Point(128, 60);
             this.btn_submit.Name = "btn_submit";
-            this.btn_submit.Size = new System.Drawing.Size(150, 29);
+            this.btn_submit.Size = new System.Drawing.Size(139, 23);
             this.btn_submit.TabIndex = 1;
             this.btn_submit.Text = "提交";
             this.btn_submit.UseVisualStyleBackColor = true;

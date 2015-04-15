@@ -13,12 +13,11 @@ namespace ZHBB
 {
     public partial class FrmRecordIn : Form
     {
-        public Point p_car;
-        public Point p_cp;
+        private Point p_car;
+        private Point p_cp;
 
-        public int rid;
-        public bool IsSensor = true;
-
+        private int id;
+        private bool IsSensor = true;
 
         public FrmRecordIn()
         {
@@ -205,8 +204,6 @@ namespace ZHBB
             }
         }
 
-
-
         // 刷新最新录入的10条记录
         public void refreshInRecords()
         {
@@ -214,6 +211,7 @@ namespace ZHBB
                             SELECT TOP 100
                                 ID,
                                 chepai as '车牌号',
+                                Company as '采购单位',
                                 InWeight as '进入重量',
                                 InTime as '进入时间'
                             FROM Records 
@@ -241,12 +239,15 @@ namespace ZHBB
                 return;
             }
 
+            DataGridViewRow row = dgv_in_records.Rows[e.RowIndex];
+            this.id = Convert.ToInt32(row.Cells["ID"].Value);
+
             if (dgv_in_records.Columns[e.ColumnIndex].Name == "删除")
             {
                 if (MessageBox.Show("您确定要删除这条记录吗？", "提示", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     SqlParameter p_id = new SqlParameter("@p_pid", SqlDbType.Int);
-                    p_id.Value = this.rid;
+                    p_id.Value = this.id;
                     int affect = SqlHelper.ExecuteNonQuery("DELETE FROM Records WHERE ID = @p_pid", p_id);
                     if (affect == 1)
                     {
@@ -326,9 +327,6 @@ namespace ZHBB
         {
             tb_InWeight.Text = Util.GetSensorWeight().ToString();
         }
-
-
-
 
     }
 }

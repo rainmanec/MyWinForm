@@ -54,19 +54,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_suggest = new System.Windows.Forms.DataGridView();
             this.dgv_out_records = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox_out = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_suggest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_out_records)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBox_out.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.groupBox_out);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -322,26 +322,26 @@
             this.dgv_out_records.TabIndex = 1;
             this.dgv_out_records.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_out_records_CellContentClick);
             // 
-            // groupBox1
+            // groupBox_out
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btn_getWeight);
-            this.groupBox1.Controls.Add(this.tb_chepai);
-            this.groupBox1.Controls.Add(this.cb_kind);
-            this.groupBox1.Controls.Add(this.tb_OutWeight);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.lb_id);
-            this.groupBox1.Controls.Add(this.btn_submit);
-            this.groupBox1.Controls.Add(this.tb_other);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(28, 21);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(415, 206);
-            this.groupBox1.TabIndex = 62;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "出厂信息";
+            this.groupBox_out.Controls.Add(this.label1);
+            this.groupBox_out.Controls.Add(this.label2);
+            this.groupBox_out.Controls.Add(this.btn_getWeight);
+            this.groupBox_out.Controls.Add(this.tb_chepai);
+            this.groupBox_out.Controls.Add(this.cb_kind);
+            this.groupBox_out.Controls.Add(this.tb_OutWeight);
+            this.groupBox_out.Controls.Add(this.label4);
+            this.groupBox_out.Controls.Add(this.label3);
+            this.groupBox_out.Controls.Add(this.lb_id);
+            this.groupBox_out.Controls.Add(this.btn_submit);
+            this.groupBox_out.Controls.Add(this.tb_other);
+            this.groupBox_out.Controls.Add(this.label5);
+            this.groupBox_out.Location = new System.Drawing.Point(28, 21);
+            this.groupBox_out.Name = "groupBox_out";
+            this.groupBox_out.Size = new System.Drawing.Size(415, 206);
+            this.groupBox_out.TabIndex = 62;
+            this.groupBox_out.TabStop = false;
+            this.groupBox_out.Text = "出厂信息";
             // 
             // groupBox2
             // 
@@ -377,8 +377,8 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_suggest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_out_records)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox_out.ResumeLayout(false);
+            this.groupBox_out.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -413,7 +413,7 @@
         private System.Windows.Forms.TextBox tb_cp;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox_out;
 
     }
 }

@@ -62,7 +62,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(906, 174);
+            this.panel1.Size = new System.Drawing.Size(906, 168);
             this.panel1.TabIndex = 0;
             // 
             // tb_cp
@@ -183,11 +183,11 @@
             this.dgv_in_records.AllowUserToResizeRows = false;
             this.dgv_in_records.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_in_records.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_in_records.Location = new System.Drawing.Point(0, 174);
+            this.dgv_in_records.Location = new System.Drawing.Point(0, 168);
             this.dgv_in_records.Name = "dgv_in_records";
             this.dgv_in_records.ReadOnly = true;
             this.dgv_in_records.RowTemplate.Height = 23;
-            this.dgv_in_records.Size = new System.Drawing.Size(906, 454);
+            this.dgv_in_records.Size = new System.Drawing.Size(906, 460);
             this.dgv_in_records.TabIndex = 100;
             this.dgv_in_records.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_in_records_CellContentClick);
             // 

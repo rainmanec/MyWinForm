@@ -56,7 +56,7 @@
             // 
             this.btn_OK.Location = new System.Drawing.Point(100, 177);
             this.btn_OK.Name = "btn_OK";
-            this.btn_OK.Size = new System.Drawing.Size(105, 36);
+            this.btn_OK.Size = new System.Drawing.Size(115, 23);
             this.btn_OK.TabIndex = 7;
             this.btn_OK.Text = "提交";
             this.btn_OK.UseVisualStyleBackColor = true;
@@ -64,11 +64,11 @@
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(227, 177);
+            this.btn_Cancel.Location = new System.Drawing.Point(243, 177);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(105, 36);
+            this.btn_Cancel.Size = new System.Drawing.Size(115, 23);
             this.btn_Cancel.TabIndex = 8;
-            this.btn_Cancel.Text = "关闭";
+            this.btn_Cancel.Text = "取消";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 

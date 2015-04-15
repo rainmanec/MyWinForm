@@ -34,7 +34,7 @@ namespace ZHBB
             string sql = string.Format(@"
                             SELECT 
                                 ID,
-                                uname as '车牌号',
+                                uname as '登录名',
                                 xingming as '姓名',
                                 password as '密码',
                                 phone as '电话',

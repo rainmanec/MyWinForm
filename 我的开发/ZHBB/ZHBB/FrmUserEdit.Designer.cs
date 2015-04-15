@@ -67,9 +67,9 @@
             // 
             // btn_OK
             // 
-            this.btn_OK.Location = new System.Drawing.Point(100, 214);
+            this.btn_OK.Location = new System.Drawing.Point(100, 205);
             this.btn_OK.Name = "btn_OK";
-            this.btn_OK.Size = new System.Drawing.Size(105, 36);
+            this.btn_OK.Size = new System.Drawing.Size(115, 23);
             this.btn_OK.TabIndex = 7;
             this.btn_OK.Text = "提交";
             this.btn_OK.UseVisualStyleBackColor = true;
@@ -77,9 +77,9 @@
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(227, 214);
+            this.btn_Cancel.Location = new System.Drawing.Point(243, 205);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(105, 36);
+            this.btn_Cancel.Size = new System.Drawing.Size(115, 23);
             this.btn_Cancel.TabIndex = 8;
             this.btn_Cancel.Text = "关闭";
             this.btn_Cancel.UseVisualStyleBackColor = true;
@@ -203,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 282);
+            this.ClientSize = new System.Drawing.Size(438, 253);
             this.Controls.Add(this.cb_roleid);
             this.Controls.Add(this.tb_beizhu);
             this.Controls.Add(this.tb_password);

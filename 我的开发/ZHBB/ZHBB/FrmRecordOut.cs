@@ -33,7 +33,7 @@ namespace ZHBB
             this.btn_getWeight.Visible = this.IsSensor;
             this.tb_OutWeight.ReadOnly = this.IsSensor;
             Util.InitComboBox(cb_kind, "Kinds", "Title");
-            this.p = new Point(tb_chepai.Left, tb_chepai.Top + tb_chepai.Height);
+            this.p = new Point(tb_chepai.Left + this.groupBox_out.Left, this.groupBox_out.Top + tb_chepai.Top + tb_chepai.Height);
             this.refreshInRecords();
             lb_id.Text = "";
         }
@@ -65,7 +65,7 @@ namespace ZHBB
                     dgv.BringToFront();
                     dgv.Visible = true;
                     dgv.Columns["Company"].Visible = false;
-                    dgv.Height = dgv.Rows.Count * dgv.RowTemplate.Height + dgv.ColumnHeadersHeight + 10;
+                    dgv.Height = dgv.Rows.Count * dgv.RowTemplate.Height + dgv.ColumnHeadersHeight + 2;
                 }
             }
             if(IsResetDgv)

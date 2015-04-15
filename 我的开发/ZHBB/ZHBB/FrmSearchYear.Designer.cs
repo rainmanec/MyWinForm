@@ -58,7 +58,7 @@
             // lb_year
             // 
             this.lb_year.AutoSize = true;
-            this.lb_year.Location = new System.Drawing.Point(210, 20);
+            this.lb_year.Location = new System.Drawing.Point(212, 20);
             this.lb_year.Name = "lb_year";
             this.lb_year.Size = new System.Drawing.Size(29, 12);
             this.lb_year.TabIndex = 25;
@@ -67,7 +67,7 @@
             // lb_sum
             // 
             this.lb_sum.AutoSize = true;
-            this.lb_sum.Location = new System.Drawing.Point(471, 22);
+            this.lb_sum.Location = new System.Drawing.Point(471, 20);
             this.lb_sum.Name = "lb_sum";
             this.lb_sum.Size = new System.Drawing.Size(41, 12);
             this.lb_sum.TabIndex = 24;
@@ -77,7 +77,7 @@
             // 
             this.btn_excel.AutoSize = true;
             this.btn_excel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_excel.Location = new System.Drawing.Point(371, 17);
+            this.btn_excel.Location = new System.Drawing.Point(371, 15);
             this.btn_excel.Name = "btn_excel";
             this.btn_excel.Size = new System.Drawing.Size(75, 23);
             this.btn_excel.TabIndex = 21;
@@ -87,7 +87,7 @@
             // 
             // dtp_year
             // 
-            this.dtp_year.Location = new System.Drawing.Point(79, 15);
+            this.dtp_year.Location = new System.Drawing.Point(79, 16);
             this.dtp_year.Name = "dtp_year";
             this.dtp_year.Size = new System.Drawing.Size(120, 21);
             this.dtp_year.TabIndex = 10;
@@ -96,7 +96,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 19);
+            this.label5.Location = new System.Drawing.Point(35, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 12);
             this.label5.TabIndex = 9;
@@ -106,7 +106,7 @@
             // 
             this.btn_submit.AutoSize = true;
             this.btn_submit.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_submit.Location = new System.Drawing.Point(266, 16);
+            this.btn_submit.Location = new System.Drawing.Point(267, 15);
             this.btn_submit.Name = "btn_submit";
             this.btn_submit.Size = new System.Drawing.Size(79, 23);
             this.btn_submit.TabIndex = 5;

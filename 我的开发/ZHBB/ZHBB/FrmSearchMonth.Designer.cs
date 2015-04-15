@@ -67,7 +67,7 @@
             // lb_sum
             // 
             this.lb_sum.AutoSize = true;
-            this.lb_sum.Location = new System.Drawing.Point(447, 17);
+            this.lb_sum.Location = new System.Drawing.Point(447, 19);
             this.lb_sum.Name = "lb_sum";
             this.lb_sum.Size = new System.Drawing.Size(41, 12);
             this.lb_sum.TabIndex = 24;
@@ -77,7 +77,7 @@
             // 
             this.btn_excel.AutoSize = true;
             this.btn_excel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_excel.Location = new System.Drawing.Point(352, 12);
+            this.btn_excel.Location = new System.Drawing.Point(352, 14);
             this.btn_excel.Name = "btn_excel";
             this.btn_excel.Size = new System.Drawing.Size(75, 23);
             this.btn_excel.TabIndex = 21;
@@ -106,7 +106,7 @@
             // 
             this.btn_submit.AutoSize = true;
             this.btn_submit.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_submit.Location = new System.Drawing.Point(256, 13);
+            this.btn_submit.Location = new System.Drawing.Point(256, 14);
             this.btn_submit.Name = "btn_submit";
             this.btn_submit.Size = new System.Drawing.Size(79, 23);
             this.btn_submit.TabIndex = 5;
