@@ -369,6 +369,7 @@
     <None Include="ZHBB_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\weight20.png" />
     <Content Include="project32.ico" />
     <Content Include="Resource\bin\Aspose.Cells.dll" />
     <Content Include="Resource\ico\classic_folder_projects.ico" />

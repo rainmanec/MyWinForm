@@ -66,12 +66,12 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(847, 137);
+            this.panel1.Size = new System.Drawing.Size(847, 168);
             this.panel1.TabIndex = 0;
             // 
             // paginator1
             // 
-            this.paginator1.Location = new System.Drawing.Point(373, 98);
+            this.paginator1.Location = new System.Drawing.Point(375, 130);
             this.paginator1.Name = "paginator1";
             this.paginator1.Size = new System.Drawing.Size(389, 23);
             this.paginator1.TabIndex = 22;
@@ -135,9 +135,9 @@
             // btn_submit
             // 
             this.btn_submit.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_submit.Location = new System.Drawing.Point(373, 10);
+            this.btn_submit.Location = new System.Drawing.Point(91, 130);
             this.btn_submit.Name = "btn_submit";
-            this.btn_submit.Size = new System.Drawing.Size(141, 79);
+            this.btn_submit.Size = new System.Drawing.Size(257, 23);
             this.btn_submit.TabIndex = 5;
             this.btn_submit.Text = "提交";
             this.btn_submit.UseVisualStyleBackColor = true;
@@ -182,7 +182,7 @@
             this.dgv_cars.AllowUserToResizeRows = false;
             this.dgv_cars.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_cars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_cars.Location = new System.Drawing.Point(563, 207);
+            this.dgv_cars.Location = new System.Drawing.Point(561, 206);
             this.dgv_cars.MultiSelect = false;
             this.dgv_cars.Name = "dgv_cars";
             this.dgv_cars.ReadOnly = true;
@@ -199,11 +199,11 @@
             this.dgv_records.AllowUserToResizeRows = false;
             this.dgv_records.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_records.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_records.Location = new System.Drawing.Point(0, 137);
+            this.dgv_records.Location = new System.Drawing.Point(0, 168);
             this.dgv_records.Name = "dgv_records";
             this.dgv_records.ReadOnly = true;
             this.dgv_records.RowTemplate.Height = 23;
-            this.dgv_records.Size = new System.Drawing.Size(847, 376);
+            this.dgv_records.Size = new System.Drawing.Size(847, 345);
             this.dgv_records.TabIndex = 1;
             this.dgv_records.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_in_records_CellContentClick);
             // 
@@ -215,7 +215,7 @@
             this.dgv_company.AllowUserToResizeRows = false;
             this.dgv_company.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_company.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_company.Location = new System.Drawing.Point(255, 207);
+            this.dgv_company.Location = new System.Drawing.Point(244, 206);
             this.dgv_company.MultiSelect = false;
             this.dgv_company.Name = "dgv_company";
             this.dgv_company.ReadOnly = true;

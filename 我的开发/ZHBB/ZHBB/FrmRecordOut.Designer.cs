@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecordOut));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tb_cp = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -53,95 +54,81 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_suggest = new System.Windows.Forms.DataGridView();
             this.dgv_out_records = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_suggest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_out_records)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.tb_cp);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.btn_getWeight);
-            this.panel1.Controls.Add(this.cb_kind);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.lb_id);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.tb_NetWeight);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.tb_InTime);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.tb_InWeight);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.tb_other);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.btn_submit);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.tb_OutWeight);
-            this.panel1.Controls.Add(this.tb_chepai);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 247);
+            this.panel1.Size = new System.Drawing.Size(901, 247);
             this.panel1.TabIndex = 0;
             // 
             // tb_cp
             // 
-            this.tb_cp.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tb_cp.Location = new System.Drawing.Point(561, 59);
+            this.tb_cp.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tb_cp.Location = new System.Drawing.Point(96, 60);
             this.tb_cp.Name = "tb_cp";
             this.tb_cp.ReadOnly = true;
-            this.tb_cp.Size = new System.Drawing.Size(236, 29);
+            this.tb_cp.Size = new System.Drawing.Size(236, 21);
             this.tb_cp.TabIndex = 21;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(451, 65);
+            this.label11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.Location = new System.Drawing.Point(28, 64);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(104, 19);
+            this.label11.Size = new System.Drawing.Size(65, 12);
             this.label11.TabIndex = 22;
             this.label11.Text = "采购单位：";
             // 
             // btn_getWeight
             // 
-            this.btn_getWeight.Location = new System.Drawing.Point(348, 102);
+            this.btn_getWeight.FlatAppearance.BorderSize = 0;
+            this.btn_getWeight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_getWeight.Image = ((System.Drawing.Image)(resources.GetObject("btn_getWeight.Image")));
+            this.btn_getWeight.Location = new System.Drawing.Point(361, 91);
             this.btn_getWeight.Name = "btn_getWeight";
-            this.btn_getWeight.Size = new System.Drawing.Size(71, 30);
+            this.btn_getWeight.Size = new System.Drawing.Size(24, 22);
             this.btn_getWeight.TabIndex = 4;
-            this.btn_getWeight.Text = "提取重量";
             this.btn_getWeight.UseVisualStyleBackColor = true;
             this.btn_getWeight.Click += new System.EventHandler(this.btn_getWeight_Click);
             // 
             // cb_kind
             // 
             this.cb_kind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_kind.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cb_kind.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cb_kind.FormattingEnabled = true;
-            this.cb_kind.Location = new System.Drawing.Point(137, 62);
+            this.cb_kind.Location = new System.Drawing.Point(95, 60);
             this.cb_kind.Name = "cb_kind";
-            this.cb_kind.Size = new System.Drawing.Size(182, 27);
+            this.cb_kind.Size = new System.Drawing.Size(236, 20);
             this.cb_kind.TabIndex = 2;
             this.cb_kind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_kind_KeyDown);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(65, 62);
+            this.label4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(39, 63);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 19);
+            this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 18;
-            this.label4.Text = "种类：";
+            this.label4.Text = "种  类：";
             // 
             // lb_id
             // 
             this.lb_id.AutoSize = true;
-            this.lb_id.Location = new System.Drawing.Point(472, 207);
+            this.lb_id.Location = new System.Drawing.Point(338, 168);
             this.lb_id.Name = "lb_id";
             this.lb_id.Size = new System.Drawing.Size(17, 12);
             this.lb_id.TabIndex = 17;
@@ -150,7 +137,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(803, 152);
+            this.label8.Location = new System.Drawing.Point(338, 137);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(17, 12);
             this.label8.TabIndex = 16;
@@ -158,46 +145,46 @@
             // 
             // tb_NetWeight
             // 
-            this.tb_NetWeight.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tb_NetWeight.Location = new System.Drawing.Point(561, 143);
+            this.tb_NetWeight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tb_NetWeight.Location = new System.Drawing.Point(96, 128);
             this.tb_NetWeight.Name = "tb_NetWeight";
             this.tb_NetWeight.ReadOnly = true;
-            this.tb_NetWeight.Size = new System.Drawing.Size(236, 29);
+            this.tb_NetWeight.Size = new System.Drawing.Size(236, 21);
             this.tb_NetWeight.TabIndex = 15;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(470, 145);
+            this.label10.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(40, 131);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 19);
+            this.label10.Size = new System.Drawing.Size(53, 12);
             this.label10.TabIndex = 14;
             this.label10.Text = "净重量：";
             // 
             // tb_InTime
             // 
-            this.tb_InTime.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tb_InTime.Location = new System.Drawing.Point(561, 16);
+            this.tb_InTime.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tb_InTime.Location = new System.Drawing.Point(96, 27);
             this.tb_InTime.Name = "tb_InTime";
             this.tb_InTime.ReadOnly = true;
-            this.tb_InTime.Size = new System.Drawing.Size(236, 29);
+            this.tb_InTime.Size = new System.Drawing.Size(236, 21);
             this.tb_InTime.TabIndex = 61;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(451, 21);
+            this.label9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(28, 31);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 19);
+            this.label9.Size = new System.Drawing.Size(65, 12);
             this.label9.TabIndex = 12;
             this.label9.Text = "进厂时间：";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(803, 112);
+            this.label6.Location = new System.Drawing.Point(338, 102);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(17, 12);
             this.label6.TabIndex = 11;
@@ -205,48 +192,48 @@
             // 
             // tb_InWeight
             // 
-            this.tb_InWeight.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tb_InWeight.Location = new System.Drawing.Point(561, 103);
+            this.tb_InWeight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tb_InWeight.Location = new System.Drawing.Point(96, 93);
             this.tb_InWeight.Name = "tb_InWeight";
             this.tb_InWeight.ReadOnly = true;
-            this.tb_InWeight.Size = new System.Drawing.Size(236, 29);
+            this.tb_InWeight.Size = new System.Drawing.Size(236, 21);
             this.tb_InWeight.TabIndex = 51;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(451, 105);
+            this.label7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(28, 97);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 19);
+            this.label7.Size = new System.Drawing.Size(65, 12);
             this.label7.TabIndex = 9;
             this.label7.Text = "进厂重量：";
             // 
             // tb_other
             // 
-            this.tb_other.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tb_other.Location = new System.Drawing.Point(137, 143);
+            this.tb_other.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tb_other.Location = new System.Drawing.Point(95, 127);
             this.tb_other.Name = "tb_other";
-            this.tb_other.Size = new System.Drawing.Size(182, 29);
+            this.tb_other.Size = new System.Drawing.Size(236, 21);
             this.tb_other.TabIndex = 5;
             this.tb_other.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_price_KeyDown);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(65, 146);
+            this.label5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(39, 131);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 19);
+            this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 6;
-            this.label5.Text = "其他：";
+            this.label5.Text = "其  他：";
             // 
             // btn_submit
             // 
-            this.btn_submit.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_submit.Location = new System.Drawing.Point(348, 193);
+            this.btn_submit.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_submit.Location = new System.Drawing.Point(95, 163);
             this.btn_submit.Name = "btn_submit";
-            this.btn_submit.Size = new System.Drawing.Size(110, 35);
+            this.btn_submit.Size = new System.Drawing.Size(236, 23);
             this.btn_submit.TabIndex = 6;
             this.btn_submit.Text = "提交";
             this.btn_submit.UseVisualStyleBackColor = true;
@@ -255,7 +242,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(325, 111);
+            this.label3.Location = new System.Drawing.Point(338, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(17, 12);
             this.label3.TabIndex = 4;
@@ -263,20 +250,20 @@
             // 
             // tb_OutWeight
             // 
-            this.tb_OutWeight.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tb_OutWeight.Location = new System.Drawing.Point(137, 103);
+            this.tb_OutWeight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tb_OutWeight.Location = new System.Drawing.Point(95, 92);
             this.tb_OutWeight.Name = "tb_OutWeight";
-            this.tb_OutWeight.Size = new System.Drawing.Size(182, 29);
+            this.tb_OutWeight.Size = new System.Drawing.Size(236, 21);
             this.tb_OutWeight.TabIndex = 3;
             this.tb_OutWeight.TextChanged += new System.EventHandler(this.tb_OutWeight_TextChanged);
             this.tb_OutWeight.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_OutWeight_KeyDown);
             // 
             // tb_chepai
             // 
-            this.tb_chepai.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tb_chepai.Location = new System.Drawing.Point(137, 17);
+            this.tb_chepai.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tb_chepai.Location = new System.Drawing.Point(95, 27);
             this.tb_chepai.Name = "tb_chepai";
-            this.tb_chepai.Size = new System.Drawing.Size(182, 29);
+            this.tb_chepai.Size = new System.Drawing.Size(236, 21);
             this.tb_chepai.TabIndex = 1;
             this.tb_chepai.TextChanged += new System.EventHandler(this.tb_chepai_TextChanged);
             this.tb_chepai.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_chepai_KeyDown);
@@ -285,20 +272,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(27, 106);
+            this.label2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(24, 95);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 19);
+            this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 1;
             this.label2.Text = "出厂重量：";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(46, 22);
+            this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(38, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 19);
+            this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "车牌号：";
             // 
@@ -331,26 +318,69 @@
             this.dgv_out_records.Name = "dgv_out_records";
             this.dgv_out_records.ReadOnly = true;
             this.dgv_out_records.RowTemplate.Height = 23;
-            this.dgv_out_records.Size = new System.Drawing.Size(915, 312);
+            this.dgv_out_records.Size = new System.Drawing.Size(901, 312);
             this.dgv_out_records.TabIndex = 1;
             this.dgv_out_records.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_out_records_CellContentClick);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.btn_getWeight);
+            this.groupBox1.Controls.Add(this.tb_chepai);
+            this.groupBox1.Controls.Add(this.cb_kind);
+            this.groupBox1.Controls.Add(this.tb_OutWeight);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lb_id);
+            this.groupBox1.Controls.Add(this.btn_submit);
+            this.groupBox1.Controls.Add(this.tb_other);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Location = new System.Drawing.Point(28, 21);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(415, 206);
+            this.groupBox1.TabIndex = 62;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "出厂信息";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.tb_InWeight);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.tb_cp);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.tb_InTime);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.tb_NetWeight);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Location = new System.Drawing.Point(496, 21);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(372, 206);
+            this.groupBox2.TabIndex = 63;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "入厂信息";
             // 
             // FrmRecordOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 559);
+            this.ClientSize = new System.Drawing.Size(901, 559);
             this.Controls.Add(this.dgv_suggest);
             this.Controls.Add(this.dgv_out_records);
             this.Controls.Add(this.panel1);
             this.Name = "FrmRecordOut";
             this.Tag = "FrmRecordOut";
-            this.Text = "车辆出厂";
+            this.Text = "车厂出场";
             this.Load += new System.EventHandler(this.FrmRecordOut_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_suggest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_out_records)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -382,6 +412,8 @@
         private System.Windows.Forms.Button btn_getWeight;
         private System.Windows.Forms.TextBox tb_cp;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
 
     }
 }

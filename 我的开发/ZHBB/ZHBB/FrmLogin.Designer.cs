@@ -109,6 +109,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Tag = "FrmLogin";
             this.Text = "采石厂信息系统";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
