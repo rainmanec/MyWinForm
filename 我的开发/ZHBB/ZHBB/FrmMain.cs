@@ -68,15 +68,17 @@ namespace ZHBB
         /// <summary>
         /// 辅助函数：关闭所有MdiChild窗体
         /// </summary>
-        public void CloseMdiChildren(string tag)
+        public bool CloseMdiChildren(string tag)
         {
             foreach (Form frm in this.MdiChildren)
             {
                 if (frm.Tag.ToString() == tag)
                 {
-                    frm.Close();
+                    frm.Activate();
+                    return true;
                 }
             }
+            return false;
         }
 
         /// <summary>
@@ -146,103 +148,125 @@ namespace ZHBB
 
         private void 车辆进厂ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.CloseMdiChildren("FrmRecordIn");
-            FrmRecordIn frm = new FrmRecordIn();
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
+            if (!this.CloseMdiChildren("FrmRecordIn"))
+            {
+                FrmRecordIn frm = new FrmRecordIn();
+                frm.WindowState = FormWindowState.Maximized;
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
 
         private void 车辆出厂ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.CloseMdiChildren("FrmRecordOut");
-            FrmRecordOut frm = new FrmRecordOut();
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
+            if (!this.CloseMdiChildren("FrmRecordOut"))
+            {
+                FrmRecordOut frm = new FrmRecordOut();
+                frm.WindowState = FormWindowState.Maximized;
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
 
         private void 用户管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.CloseMdiChildren("FrmUserList");
-            FrmUserList frm = new FrmUserList();
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
+            if (!this.CloseMdiChildren("FrmUserList"))
+            {
+                FrmUserList frm = new FrmUserList();
+                frm.WindowState = FormWindowState.Maximized;
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
 
         private void 车辆管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.CloseMdiChildren("FrmCarList");
-            FrmCarList frm = new FrmCarList();
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
+            if (!this.CloseMdiChildren("FrmCarList"))
+            {
+                FrmCarList frm = new FrmCarList();
+                frm.WindowState = FormWindowState.Maximized;
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
 
         private void 种类管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.CloseMdiChildren("FrmKindList");
-            FrmKindList frm = new FrmKindList();
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
+            if (!this.CloseMdiChildren("FrmKindList"))
+            {
+                FrmKindList frm = new FrmKindList();
+                frm.WindowState = FormWindowState.Maximized;
+                frm.MdiParent = this;
+                frm.Show();
+            }
 
         }
 
         private void 采购单位管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.CloseMdiChildren("FrmCompanyList");
-            FrmCompanyList frm = new FrmCompanyList();
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
+            if (!this.CloseMdiChildren("FrmCompanyList"))
+            {
+                FrmCompanyList frm = new FrmCompanyList();
+                frm.WindowState = FormWindowState.Maximized;
+                frm.MdiParent = this;
+                frm.Show();
+            }
 
         }
 
         private void 明细查询ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.CloseMdiChildren("FrmSearchMingXi");
-            FrmSearchMingXi frm = new FrmSearchMingXi();
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
+            if (!this.CloseMdiChildren("FrmSearchMingXi"))
+            {
+                FrmSearchMingXi frm = new FrmSearchMingXi();
+                frm.WindowState = FormWindowState.Maximized;
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
 
         private void 汇总查询ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.CloseMdiChildren("FrmSearchHuiZongKind");
-            FrmSearchHuiZongKind frm = new FrmSearchHuiZongKind();
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
+            if (!this.CloseMdiChildren("FrmSearchHuiZongKind"))
+            {
+                FrmSearchHuiZongKind frm = new FrmSearchHuiZongKind();
+                frm.WindowState = FormWindowState.Maximized;
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
 
         private void 年报ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.CloseMdiChildren("FrmSearchYear");
-            FrmSearchYear frm = new FrmSearchYear();
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
+            if (!this.CloseMdiChildren("FrmSearchYear"))
+            {
+                FrmSearchYear frm = new FrmSearchYear();
+                frm.WindowState = FormWindowState.Maximized;
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
 
         private void 月报ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.CloseMdiChildren("FrmSearchMonth");
-            FrmSearchMonth frm = new FrmSearchMonth();
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
+            if (!this.CloseMdiChildren("FrmSearchMonth"))
+            {
+                FrmSearchMonth frm = new FrmSearchMonth();
+                frm.WindowState = FormWindowState.Maximized;
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
 
         private void 未出厂记录ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.CloseMdiChildren("FrmSearchNotOut");
-            FrmSearchNotOut frm = new FrmSearchNotOut();
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
+            if (!this.CloseMdiChildren("FrmSearchNotOut"))
+            {
+                FrmSearchNotOut frm = new FrmSearchNotOut();
+                frm.WindowState = FormWindowState.Maximized;
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
 
         private void 系统配置ToolStripMenuItem_Click(object sender, EventArgs e)
