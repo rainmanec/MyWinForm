@@ -75,6 +75,34 @@ namespace ZHBB
             return likevalue;
         }
 
+        public static string AddCompany(string gsm)
+        {
+            if (gsm.Trim() == "")
+            {
+                return "";
+            }
+
+            /* 验证项目是否重复 */
+            string likevalue = Util.GetLikeValue(gsm);
+
+            // 整理参数
+            SqlParameter p_gsm = Util.NewSqlParameter("@p_gsm", SqlDbType.VarChar, gsm, 50);
+            SqlParameter p_likevalue = Util.NewSqlParameter("@p_likevalue", SqlDbType.VarChar, likevalue, 100);
+
+            /* 判断登陆名是否重复 */
+            string sql_count = "select COUNT(*) as total from Company where gsm = @p_gsm";
+            string total = SqlHelper.GetFirstCellStringBySQL(sql_count, p_gsm);
+            if (total == "0")
+            {
+                /* 执行添加操作 */
+                string sql = @"insert 
+                            into Company(gsm, owner, phone, address, beizhu, Likevalue) 
+                            values (@p_gsm, '', '', '', '', @p_likevalue)";
+                SqlHelper.ExecuteNonQuery(sql, p_gsm, p_likevalue);
+            }
+            return likevalue;
+        }
+
         #endregion
 
 

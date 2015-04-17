@@ -224,14 +224,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZHBB.exe" size="217088">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZHBB.exe" size="218112">
       <assemblyIdentity name="ZHBB" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>lBgH6+BvKacSTm89o0zRLA8oJwo=</dsig:DigestValue>
+        <dsig:DigestValue>XQbumL61mTNgDtoVNySanwTRf2I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

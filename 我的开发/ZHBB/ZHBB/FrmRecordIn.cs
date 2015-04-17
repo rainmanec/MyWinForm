@@ -301,6 +301,8 @@ namespace ZHBB
 
             // 检测车牌是否存在，不存在则放入Cars表
             string likevalue = Util.AddCar(chepai);
+            // 检测采购单位是否存在，不存在则放入Company表
+            Util.AddCompany(company);
 
             SqlParameter p_chepai = Util.NewSqlParameter("@p_chepai", SqlDbType.VarChar, chepai, 50);
             SqlParameter p_likevalue = Util.NewSqlParameter("@p_likevalue", SqlDbType.VarChar, likevalue, 100);
