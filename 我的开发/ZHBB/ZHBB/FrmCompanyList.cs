@@ -130,7 +130,8 @@ namespace ZHBB
 
             Util.DgvClear(dgv_main);
             dgv_main.DataSource = table;
-            dgv_main.Columns["ID"].Visible = false;
+            Util.DgvColHide(dgv_main, "ID");
+            Util.DgvColWidth(dgv_main, "序号", 60);
 
             DataGridViewButtonColumn dgv_button_col_edit = new DataGridViewButtonColumn();
             dgv_button_col_edit.Name = "编辑";
