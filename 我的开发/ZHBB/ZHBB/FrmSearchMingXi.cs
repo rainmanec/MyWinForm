@@ -128,7 +128,7 @@ namespace ZHBB
             string search = tb_chepai.Text.Trim().Replace("'", "");
             if (search.Length > 1)
             {
-                string sql = string.Format(@"SELECT TOP 10  chepai AS '车牌号', owner as '车主' FROM Cars WHERE chepai2 LIKE '%{0}%'", search);
+                string sql = string.Format(@"SELECT TOP 10  chepai AS '车牌号', owner as '车主' FROM Cars WHERE likevalue LIKE '%{0}%'", search);
                 DataTable table = SqlHelper.GetDataTableBySQL(sql);
                 if (table.Rows.Count > 0)
                 {
@@ -208,7 +208,7 @@ namespace ZHBB
             string search = tb_cp.Text.Trim().Replace("'", "");
             if (search.Length > 1)
             {
-                string sql = string.Format(@"SELECT TOP 10 Gsm AS '单位名称', Owner as '负责人'  FROM Company WHERE Gsm LIKE '%{0}%' OR beizhu LIKE '%{0}%'", search);
+                string sql = string.Format(@"SELECT TOP 10 Gsm AS '单位名称', Owner as '负责人'  FROM Company WHERE likevalue LIKE '%{0}%'", search);
                 DataTable table = SqlHelper.GetDataTableBySQL(sql);
                 if (table.Rows.Count > 0)
                 {

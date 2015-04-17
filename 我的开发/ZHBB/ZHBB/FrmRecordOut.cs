@@ -54,7 +54,7 @@ namespace ZHBB
             {
                 string sql = string.Format(@"
                         SELECT TOP 10 ID AS '流水号', chepai AS '车牌号', InTime as '进入时间', InWeight as '进入重量', Company
-                        FROM Records WHERE chepai2 LIKE '%{0}%' AND IsClose <> 1 ORDER BY ID DESC", search);
+                        FROM Records WHERE likevalue LIKE '%{0}%' AND IsClose <> 1 ORDER BY ID DESC", search);
                 DataTable table = SqlHelper.GetDataTableBySQL(sql);
                 if (table.Rows.Count > 0)
                 {
@@ -269,7 +269,7 @@ namespace ZHBB
                                 IsClose = 1,
                                 OutUname = '{0}'
                             where ID = {1}
-                        ", TransferData.uname, id);
+                        ", AppData.uname, id);
 
             int affect = SqlHelper.ExecuteNonQuery(sql, p_OutTime, p_OutWeight, p_NetWeight, p_kind, p_other);
             if (affect > 0)
@@ -303,7 +303,7 @@ namespace ZHBB
                                 InTime as '进厂时间',
                                 OutTime as '出厂时间'
                             FROM Records 
-                            WHERE IsClose = 1 ORDER BY OutTime DESC", TransferData.uname);
+                            WHERE IsClose = 1 ORDER BY OutTime DESC", AppData.uname);
             dgv_out_records.DataSource = SqlHelper.GetDataTableBySQL(sql);
 
 

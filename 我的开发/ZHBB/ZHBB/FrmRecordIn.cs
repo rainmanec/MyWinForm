@@ -41,7 +41,7 @@ namespace ZHBB
             string search = tb_chepai.Text.Trim().Replace("'", "");
             if (search.Length > 1)
             {
-                string sql = string.Format(@"SELECT TOP 10  chepai AS '车牌号', owner as '车主' FROM Cars WHERE chepai2 LIKE '%{0}%'", search);
+                string sql = string.Format(@"SELECT TOP 10  chepai AS '车牌号', owner as '车主' FROM Cars WHERE likevalue LIKE '%{0}%'", search);
                 DataTable table = SqlHelper.GetDataTableBySQL(sql);
                 if (table.Rows.Count > 0)
                 {
@@ -119,7 +119,7 @@ namespace ZHBB
             string search = tb_cp.Text.Trim().Replace("'", "");
             if (search.Length > 1)
             {
-                string sql = string.Format(@"SELECT TOP 10 Gsm AS '单位名称', Owner as '负责人'  FROM Company WHERE Gsm LIKE '%{0}%' OR beizhu LIKE '%{0}%'", search);
+                string sql = string.Format(@"SELECT TOP 10 Gsm AS '单位名称', Owner as '负责人'  FROM Company WHERE likevalue LIKE '%{0}%'", search);
                 DataTable table = SqlHelper.GetDataTableBySQL(sql);
                 if (table.Rows.Count > 0)
                 {
@@ -300,18 +300,18 @@ namespace ZHBB
             }
 
             // 检测车牌是否存在，不存在则放入Cars表
-            string chepai2 = Util.AddCar(chepai);
+            string likevalue = Util.AddCar(chepai);
 
             SqlParameter p_chepai = Util.NewSqlParameter("@p_chepai", SqlDbType.VarChar, chepai, 50);
-            SqlParameter p_chepai2 = Util.NewSqlParameter("@p_chepai2", SqlDbType.VarChar, chepai2, 50);
+            SqlParameter p_likevalue = Util.NewSqlParameter("@p_likevalue", SqlDbType.VarChar, likevalue, 100);
             SqlParameter p_InTime = Util.NewSqlParameter("@p_InTime", SqlDbType.DateTime, DateTime.Now);
             SqlParameter p_InWeight = Util.NewSqlParameter("@p_InWeight", SqlDbType.Decimal, weight);
-            SqlParameter p_company = Util.NewSqlParameter("@p_company", SqlDbType.VarChar, company, 50);
+            SqlParameter p_company = Util.NewSqlParameter("@p_company", SqlDbType.VarChar, company, 100);
             string sql = string.Format(@"
-                            insert into Records(chepai, chepai2, InTime, InWeight, IsClose, InUname, Company) 
-                            values (@p_chepai, @p_chepai2, @p_InTime, @p_InWeight, 0, '{0}', @p_company)"
-                        , TransferData.uname);
-            int affect = SqlHelper.ExecuteNonQuery(sql, p_chepai, p_chepai2, p_InTime, p_InWeight, p_company);
+                            insert into Records(chepai, likevalue, InTime, InWeight, IsClose, InUname, Company) 
+                            values (@p_chepai, @p_likevalue, @p_InTime, @p_InWeight, 0, '{0}', @p_company)"
+                        , AppData.uname);
+            int affect = SqlHelper.ExecuteNonQuery(sql, p_chepai, p_likevalue, p_InTime, p_InWeight, p_company);
             if (affect > 0)
             {
                 tb_chepai.Text = "";

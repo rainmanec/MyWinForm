@@ -47,10 +47,11 @@ namespace ZHBB
 
             if (gsm == "")
             {
-                MessageBox.Show("车牌号不能为空");
+                MessageBox.Show("公司名不能为空");
                 tb_Gsm.Focus();
                 return;
             }
+            string likevalue = Util.GetLikeValue(gsm);
 
             // 整理参数
             SqlParameter p_gsm = Util.NewSqlParameter("@p_gsm", SqlDbType.VarChar, gsm, 50);
@@ -58,12 +59,22 @@ namespace ZHBB
             SqlParameter p_phone = Util.NewSqlParameter("@p_phone", SqlDbType.VarChar, phone, 50);
             SqlParameter p_address = Util.NewSqlParameter("@p_address", SqlDbType.VarChar, address,50);
             SqlParameter p_beizhu = Util.NewSqlParameter("@p_beizhu", SqlDbType.VarChar, beizhu, 50);
+            SqlParameter p_likevalue = Util.NewSqlParameter("@p_likevalue", SqlDbType.VarChar, likevalue, 100);
+
+            /* 判断登陆名是否重复 */
+            string sql_count = "select COUNT(*) as total from Company where gsm = @p_gsm";
+            DataRow row = SqlHelper.GetFirstRowBySQL(sql_count, p_gsm);
+            if (Convert.ToInt32(row["total"]) > 0)
+            {
+                MessageBox.Show("操作失败：该公司已存在！");
+                return;
+            }
 
             /* 执行添加操作 */
-            SqlParameter[] paras = new SqlParameter[] { p_gsm, p_owner, p_phone, p_address, p_beizhu };            
+            SqlParameter[] paras = new SqlParameter[] { p_gsm, p_owner, p_phone, p_address, p_beizhu, p_likevalue };            
             string sql = @"insert 
-                            into Company(gsm, owner, phone, address, beizhu) 
-                            values (@p_gsm, @p_owner, @p_phone, @p_address, @p_beizhu)";
+                            into Company(gsm, owner, phone, address, beizhu, Likevalue) 
+                            values (@p_gsm, @p_owner, @p_phone, @p_address, @p_beizhu, @p_likevalue)";
             int affect = SqlHelper.ExecuteNonQuery(sql, paras);
             if (affect == 1)
             {

@@ -50,9 +50,9 @@ namespace ZHBB
             DataTable table = SqlHelper.GetDataTableBySQL("select * from Users where uname = @p_uname and password = @p_password", parms);
             if (table.Rows.Count == 1)
             {
-                TransferData.uname = table.Rows[0]["uname"].ToString();
-                TransferData.xingming = table.Rows[0]["xingming"].ToString();
-                TransferData.uroleid = Util.IntTryParse(table.Rows[0]["roleid"].ToString());
+                AppData.uname = table.Rows[0]["uname"].ToString();
+                AppData.xingming = table.Rows[0]["xingming"].ToString();
+                AppData.uroleid = Util.IntTryParse(table.Rows[0]["roleid"].ToString());
                 //Util.console_log("登陆系统");
                 this.DialogResult = DialogResult.OK;
                 this.Close();

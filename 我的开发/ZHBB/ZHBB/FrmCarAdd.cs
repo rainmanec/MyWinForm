@@ -51,15 +51,15 @@ namespace ZHBB
                 tb_chepai.Focus();
                 return;
             }
+            string likevalue = Util.GetLikeValue(chepai);
 
-            string chepai2 = Util.GetLikeValue(chepai);
             // 整理参数
             SqlParameter p_chepai = Util.NewSqlParameter("@p_chepai", SqlDbType.VarChar, chepai.ToUpper(), 50);
             SqlParameter p_owner = Util.NewSqlParameter("@p_owner", SqlDbType.VarChar, owner, 50);
             SqlParameter p_phone = Util.NewSqlParameter("@p_phone", SqlDbType.VarChar, phone, 50);
             SqlParameter p_address = Util.NewSqlParameter("@p_address", SqlDbType.VarChar, address,50);
             SqlParameter p_beizhu = Util.NewSqlParameter("@p_beizhu", SqlDbType.VarChar, beizhu, 50);
-            SqlParameter p_chepai2 = Util.NewSqlParameter("@p_chepai2", SqlDbType.VarChar, chepai2.ToUpper(), 50);
+            SqlParameter p_likevalue = Util.NewSqlParameter("@p_likevalue", SqlDbType.VarChar, likevalue, 100);
 
             /* 判断登陆名是否重复 */
             string sql_count = "select COUNT(*) as total from Cars where chepai = @p_chepai";
@@ -71,10 +71,10 @@ namespace ZHBB
             }
 
             /* 执行添加操作 */
-            SqlParameter[] paras = new SqlParameter[] { p_chepai, p_owner, p_phone, p_address, p_beizhu, p_chepai2 };            
+            SqlParameter[] paras = new SqlParameter[] { p_chepai, p_owner, p_phone, p_address, p_beizhu, p_likevalue };            
             string sql = @"INSERT 
-                            INTO Cars(chepai, owner, phone, address, beizhu, chepai2) 
-                            VALUES (@p_chepai, @p_owner, @p_phone, @p_address, @p_beizhu, @p_chepai2)";
+                            INTO Cars(chepai, owner, phone, address, beizhu, Likevalue) 
+                            VALUES (@p_chepai, @p_owner, @p_phone, @p_address, @p_beizhu, @p_likevalue)";
             int affect = SqlHelper.ExecuteNonQuery(sql, paras);
             if (affect == 1)
             {

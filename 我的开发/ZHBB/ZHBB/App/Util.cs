@@ -30,11 +30,11 @@ namespace ZHBB
         {
             SqlParameter[] paras = new SqlParameter[] {
                 NewSqlParameter("@p_uname", SqlDbType.VarChar, uname, 20),
-                NewSqlParameter("@p_xingming", SqlDbType.VarChar, xingming, 20),
+                NewSqlParameter("@p_xm", SqlDbType.VarChar, xingming, 20),
                 NewSqlParameter("@p_time", SqlDbType.DateTime, DateTime.Now),
                 NewSqlParameter("@p_cnt", SqlDbType.VarChar, cnt, 200)
             };
-            string sql = "INSERT INTO 日志(uname, xingming, 时间, 内容) VALUES(@p_uname, @p_xingming, @p_time, @p_cnt)";
+            string sql = "INSERT INTO 日志(uname, 姓名, 时间, 内容) VALUES(@p_uname, @p_xm, @p_time, @p_cnt)";
             int affect = SqlHelper.ExecuteNonQuery(sql, paras);
         }
 
@@ -44,7 +44,7 @@ namespace ZHBB
         /// <param name="cnt">内容</param>
         public static void console_log(string cnt)
         {
-            //Util.console_log(TransferData.uname, TransferData.xingming, cnt);
+            Util.console_log(AppData.uname, AppData.xingming, cnt);
         }
 
         /// <summary>
@@ -61,18 +61,18 @@ namespace ZHBB
 
             // 车牌号
             chepai = chepai.ToUpper();
-            string chepai2 = Util.GetLikeValue(chepai);
+            string likevalue = Util.GetLikeValue(chepai);
             SqlParameter p_chepai = Util.NewSqlParameter("@p_chepai", SqlDbType.VarChar, chepai, 50);
-            SqlParameter p_chepai2 = Util.NewSqlParameter("@p_chepai2", SqlDbType.VarChar, chepai2, 50);
+            SqlParameter p_likevalue = Util.NewSqlParameter("@p_likevalue", SqlDbType.VarChar, likevalue, 100);
 
             string sql_count = "SELECT COUNT(*) FROM Cars WHERE chepai = @p_chepai";
             string total = SqlHelper.GetFirstCellStringBySQL(sql_count, p_chepai);
             if (total == "0")
             {
-                string sql = @"insert into Cars(chepai, chepai2, owner, phone, address, beizhu) values (@p_chepai, @p_chepai2, '', '', '', '')";
-                SqlHelper.ExecuteNonQuery(sql, p_chepai, p_chepai2);
+                string sql = @"insert into Cars(chepai, likevalue, owner, phone, address, beizhu) values (@p_chepai, @p_likevalue, '', '', '', '')";
+                SqlHelper.ExecuteNonQuery(sql, p_chepai, p_likevalue);
             }
-            return chepai2;
+            return likevalue;
         }
 
         #endregion

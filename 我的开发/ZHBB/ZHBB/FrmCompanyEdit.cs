@@ -58,6 +58,7 @@ namespace ZHBB
                 tb_chepai.Focus();
                 return;
             }
+            string likevalue = Util.GetLikeValue(gsm);
 
             // 整理参数
             SqlParameter p_gsm = Util.NewSqlParameter("@p_gsm", SqlDbType.VarChar, gsm, 50);
@@ -66,11 +67,19 @@ namespace ZHBB
             SqlParameter p_address = Util.NewSqlParameter("@p_address", SqlDbType.VarChar, address,50);
             SqlParameter p_beizhu = Util.NewSqlParameter("@p_beizhu", SqlDbType.VarChar, beizhu, 50);
             SqlParameter p_id = Util.NewSqlParameter("@p_id", SqlDbType.Int, this.id);
+            SqlParameter p_likevalue = Util.NewSqlParameter("@p_likevalue", SqlDbType.VarChar, likevalue, 100);
 
+            /* 判断登陆名是否重复 */
+            string sql_count = "select COUNT(*) as total from Company where gsm = @p_gsm AND ID <> " + this.id;
+            DataRow row = SqlHelper.GetFirstRowBySQL(sql_count, p_gsm);
+            if (Convert.ToInt32(row["total"]) > 0)
+            {
+                MessageBox.Show("操作失败：公司已存在！");
+                return;
+            }
 
-            /* 执行添加操作 */
             /* 执行编辑操作 */
-            SqlParameter[] paras = new SqlParameter[] { p_gsm, p_owner, p_phone, p_address, p_beizhu, p_id };   
+            SqlParameter[] paras = new SqlParameter[] { p_gsm, p_owner, p_phone, p_address, p_beizhu, p_id, p_likevalue };   
             string sql = string.Format(@"
                             update Company
                             set
@@ -78,7 +87,8 @@ namespace ZHBB
                                 owner = @p_owner,
                                 phone = @p_phone,
                                 address = @p_address,
-                                beizhu = @p_beizhu
+                                beizhu = @p_beizhu,
+                                likevalue = @p_likevalue
                             where ID = @p_id
                         ");
             int affect = SqlHelper.ExecuteNonQuery(sql, paras);

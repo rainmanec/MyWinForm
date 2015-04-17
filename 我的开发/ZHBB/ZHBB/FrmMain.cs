@@ -30,12 +30,12 @@ namespace ZHBB
             DataRow data = SqlHelper.GetFirstRowBySQL("SELECT * FROM Config WHERE K = 'Version'");
             double version_t = Convert.ToDouble(data["V"].ToString());
             bool isVersion = true;
-            if (TransferData.version < version_t)
+            if (AppData.version < version_t)
             {
                 MessageBox.Show("您当前的软件版本过低，请联系管理员更新至V" + version_t.ToString("F1") + "！");
                 isVersion = false;
             }
-            else if (TransferData.version > version_t)
+            else if (AppData.version > version_t)
             {
                 MessageBox.Show("您当前的软件版本不正确，请联系管理员！");
                 isVersion = false;
@@ -88,7 +88,7 @@ namespace ZHBB
         /// </summary>
         public void InitInterface()
         {
-            int roleid = TransferData.uroleid;
+            int roleid = AppData.uroleid;
             if (roleid != 1)
             {
                 用户管理ToolStripMenuItem.Visible = false;

@@ -140,7 +140,7 @@
     <Compile Include="MyUIPrintSetting.designer.cs">
       <DependentUpon>MyUIPrintSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="TransferData.cs" />
+    <Compile Include="App\AppData.cs" />
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,7 +337,7 @@
     <EmbeddedResource Include="FrmSearchNotOut.resx">
       <DependentUpon>FrmSearchNotOut.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RdlcRecord.rdlc">
+    <EmbeddedResource Include="Rdlc\RdlcRecord.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUIReportViwer.resx">

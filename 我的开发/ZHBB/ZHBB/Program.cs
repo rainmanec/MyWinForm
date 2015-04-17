@@ -17,7 +17,7 @@ namespace ZHBB
             Application.SetCompatibleTextRenderingDefault(false);
             // 连接字符串
             //SqlHelper.ConnectionString = Util.decode(System.Web.HttpUtility.UrlDecode(TransferData.CntString));
-            SqlHelper.ConnectionString = System.Web.HttpUtility.UrlDecode(TransferData.CntString);
+            SqlHelper.ConnectionString = System.Web.HttpUtility.UrlDecode(AppData.CntString);
             Application.Run(new FrmMain());
         }
     }

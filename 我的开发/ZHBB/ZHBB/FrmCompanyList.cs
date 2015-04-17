@@ -41,8 +41,8 @@ namespace ZHBB
                             phone as '电话',
                             address as '地址',
                             beizhu as '备注'
-                        FROM Company WHERE Gsm like '%{0}%' OR beizhu like '%{0}%'", search);
-            this.sql_count = string.Format(@"SELECT ISNULL(COUNT(*), 0) FROM Company WHERE Gsm like '%{0}%' OR beizhu like '%{0}%'", search);
+                        FROM Company WHERE Gsm like '%{0}%'", search);
+            this.sql_count = string.Format(@"SELECT ISNULL(COUNT(*), 0) FROM Company WHERE likevalue like '%{0}%'", search);
             this.paginator1.Init(Util.IntTryParse(SqlHelper.GetFirstCellStringBySQL(this.sql_count)), 100);
         }
 
