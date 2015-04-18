@@ -90,7 +90,11 @@ namespace ZHBB
                     int rowIndex = dgv.CurrentCell.RowIndex;
                     if (rowIndex >= 0)
                     {
+                        //tb_chepai_TextChanged
+                        this.tb_chepai.TextChanged -= new System.EventHandler(this.tb_chepai_TextChanged);
                         tb_chepai.Text = dgv.Rows[rowIndex].Cells[0].Value.ToString().Trim();
+                        this.tb_chepai.TextChanged += new System.EventHandler(this.tb_chepai_TextChanged);
+                        //other
                         tb_chepai.Select(tb_chepai.Text.Length, 0);
                         dgv.DataSource = null;
                         dgv.Visible = false;
@@ -169,7 +173,11 @@ namespace ZHBB
                     int rowIndex = dgv.CurrentCell.RowIndex;
                     if (rowIndex >= 0)
                     {
+                        // tb_cp_TextChanged
+                        this.tb_cp.TextChanged -= new System.EventHandler(this.tb_cp_TextChanged);
                         tb_cp.Text = dgv.Rows[rowIndex].Cells[0].Value.ToString().Trim();
+                        this.tb_cp.TextChanged += new System.EventHandler(this.tb_cp_TextChanged);
+
                         tb_cp.Select(tb_cp.Text.Length, 0);
                         dgv.DataSource = null;
                         dgv.Visible = false;

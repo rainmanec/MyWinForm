@@ -86,6 +86,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\AppData.cs" />
     <Compile Include="Library\Util.cs" />
     <Compile Include="MyUIReportViwer.cs">
       <SubType>Form</SubType>
@@ -93,10 +94,10 @@
     <Compile Include="MyUIReportViwer.Designer.cs">
       <DependentUpon>MyUIReportViwer.cs</DependentUpon>
     </Compile>
-    <Compile Include="XsdRecord.Designer.cs">
+    <Compile Include="Xsd\DataSetRecord.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>XsdRecord.xsd</DependentUpon>
+      <DependentUpon>DataSetRecord.xsd</DependentUpon>
     </Compile>
     <Compile Include="FrmAbout.cs">
       <SubType>Form</SubType>
@@ -140,7 +141,6 @@
     <Compile Include="MyUIPrintSetting.designer.cs">
       <DependentUpon>MyUIPrintSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="App\AppData.cs" />
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,16 +346,16 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="XsdRecord.xsc">
-      <DependentUpon>XsdRecord.xsd</DependentUpon>
+    <None Include="Xsd\DataSetRecord.xsc">
+      <DependentUpon>DataSetRecord.xsd</DependentUpon>
     </None>
-    <None Include="XsdRecord.xsd">
+    <None Include="Xsd\DataSetRecord.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>XsdRecord.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetRecord.Designer.cs</LastGenOutput>
     </None>
-    <None Include="XsdRecord.xss">
-      <DependentUpon>XsdRecord.xsd</DependentUpon>
+    <None Include="Xsd\DataSetRecord.xss">
+      <DependentUpon>DataSetRecord.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

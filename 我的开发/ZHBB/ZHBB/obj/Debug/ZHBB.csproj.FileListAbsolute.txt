@@ -535,7 +535,6 @@ C:\Users\Administrator\Documents\GitHub\MyWinForm\我的开发\ZHBB\ZHBB\bin\Deb
 C:\Users\Administrator\Documents\GitHub\MyWinForm\我的开发\ZHBB\ZHBB\bin\Debug\MyUI.pdb
 C:\Users\Administrator\Documents\GitHub\MyWinForm\我的开发\ZHBB\ZHBB\obj\Debug\ZHBB.exe.manifest
 C:\Users\Administrator\Documents\GitHub\MyWinForm\我的开发\ZHBB\ZHBB\obj\Debug\ZHBB.application
-C:\Users\rainman\Documents\GitHub\MyWinForm\我的开发\ZHBB\ZHBB\bin\Debug\RdlcRecord.rdlc
 C:\Users\rainman\Documents\GitHub\MyWinForm\我的开发\ZHBB\ZHBB\bin\Debug\ZHBB.exe.config
 C:\Users\rainman\Documents\GitHub\MyWinForm\我的开发\ZHBB\ZHBB\bin\Debug\ZHBB.exe.manifest
 C:\Users\rainman\Documents\GitHub\MyWinForm\我的开发\ZHBB\ZHBB\bin\Debug\ZHBB.application
@@ -580,3 +579,4 @@ C:\Users\rainman\Documents\GitHub\MyWinForm\我的开发\ZHBB\ZHBB\obj\Debug\ZHB
 C:\Users\rainman\Documents\GitHub\MyWinForm\我的开发\ZHBB\ZHBB\obj\Debug\ZHBB.exe
 C:\Users\rainman\Documents\GitHub\MyWinForm\我的开发\ZHBB\ZHBB\obj\Debug\ZHBB.pdb
 C:\Users\Administrator\Documents\GitHub\MyWinForm\我的开发\ZHBB\ZHBB\bin\Debug\Rdlc\RdlcRecord.rdlc
+C:\Users\rainman\Documents\GitHub\MyWinForm\我的开发\ZHBB\ZHBB\bin\Debug\Rdlc\RdlcRecord.rdlc

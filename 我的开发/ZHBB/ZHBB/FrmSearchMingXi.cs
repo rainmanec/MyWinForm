@@ -179,7 +179,9 @@ namespace ZHBB
                     int rowIndex = dgv.CurrentCell.RowIndex;
                     if (rowIndex >= 0)
                     {
+                        this.tb_chepai.TextChanged -= new System.EventHandler(this.tb_chepai_TextChanged);
                         tb_chepai.Text = dgv.Rows[rowIndex].Cells[0].Value.ToString().Trim();
+                        this.tb_chepai.TextChanged += new System.EventHandler(this.tb_chepai_TextChanged);
                         tb_chepai.Select(tb_chepai.Text.Length, 0);
                         dgv.DataSource = null;
                         dgv.Visible = false;
@@ -259,7 +261,9 @@ namespace ZHBB
                     int rowIndex = dgv.CurrentCell.RowIndex;
                     if (rowIndex >= 0)
                     {
+                        this.tb_cp.TextChanged -= new System.EventHandler(this.tb_cp_TextChanged);
                         tb_cp.Text = dgv.Rows[rowIndex].Cells[0].Value.ToString().Trim();
+                        this.tb_cp.TextChanged += new System.EventHandler(this.tb_cp_TextChanged);
                         tb_cp.Select(tb_cp.Text.Length, 0);
                         dgv.DataSource = null;
                         dgv.Visible = false;
@@ -326,45 +330,7 @@ namespace ZHBB
             }
             else if (dgv_records.Columns[e.ColumnIndex].Name == "打印")
             {
-                // 整理Report Data Source
-                string sql = string.Format(@"SELECT *, Users.xingming as 'outXingming' FROM Records LEFT JOIN Users ON Records.OutUname = Users.uname  where Records.ID = {0}", this.id);
-                DataTable table = SqlHelper.GetDataTableBySQL(sql);
-                DataRow row = table.Rows[0];
-                DataTable tb = new DataTable("DataTable1");
-                tb.Columns.Add(new DataColumn() { ColumnName = "col1", DataType = typeof(string) });
-                tb.Columns.Add(new DataColumn() { ColumnName = "col2", DataType = typeof(string) });
-                tb.Columns.Add(new DataColumn() { ColumnName = "col3", DataType = typeof(string) });
-                tb.Rows.Add(tb.NewRow());
-                tb.Rows.Add(tb.NewRow());
-                tb.Rows.Add(tb.NewRow());
-                tb.Rows.Add(tb.NewRow());
-                tb.Rows[0][0] = "车牌";
-                tb.Rows[0][1] = "种类";
-                tb.Rows[0][2] = "其他";
-                tb.Rows[1][0] = row["chepai"].ToString();
-                tb.Rows[1][1] = row["Kind"].ToString();
-                tb.Rows[1][2] = "";
-                tb.Rows[2][0] = "出厂重量";
-                tb.Rows[2][1] = "进厂重量";
-                tb.Rows[2][2] = "净重量";
-                tb.Rows[3][0] = row["InWeight"].ToString();
-                tb.Rows[3][1] = row["OutWeight"].ToString();
-                tb.Rows[3][2] = row["NetWeight"].ToString();
-
-                ReportParameter p_company = new ReportParameter("p_company", row["Company"].ToString() + "采购单");
-                ReportParameter p_outuser = new ReportParameter("p_outuser", "操作员：" + row["outXingming"].ToString());
-                ReportParameter p_outtime = new ReportParameter("p_outtime", Convert.IsDBNull(row["OutTime"]) ? "" : "时间：" + Convert.ToDateTime(row["OutTime"]).ToString("yyyy-MM-dd hh:mm"));
-                ReportParameter[] parms = new ReportParameter[] { p_company, p_outuser, p_outtime };
-                ReportDataSource source = new ReportDataSource();
-                source.Name = "DataRecord";
-                source.Value = tb;
-
-                MyUIReportViwer frmRPT = new MyUIReportViwer();
-                frmRPT.MainDataSource = source;
-                frmRPT.ReportParms = parms;
-                frmRPT.ReportID = "PrintSetRecordOut";
-                frmRPT.ReportPath = System.Windows.Forms.Application.StartupPath + @"\RdlcRecord.rdlc";
-                frmRPT.ShowDialog();
+                Util.PrintRecord(this.id);
             }
         }
 

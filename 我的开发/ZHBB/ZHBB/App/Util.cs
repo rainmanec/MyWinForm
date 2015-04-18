@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using System.Configuration;
 using System.Web.Script.Serialization;
+using Microsoft.Reporting.WinForms;
 namespace ZHBB
 {
     partial class Util
@@ -140,6 +141,60 @@ namespace ZHBB
 
 
         #region 项目常用函数
+
+        /// <summary>
+        /// 打印出库单
+        /// </summary>
+        /// <param name="id">记录ID</param>
+        public static void PrintRecord(int id)
+        {
+            // 整理Report Data Source
+            string sql = string.Format(@"SELECT *, Users.xingming as 'outXingming' FROM Records LEFT JOIN Users ON Records.OutUname = Users.uname  where Records.ID = {0}", id);
+            DataTable table = SqlHelper.GetDataTableBySQL(sql);
+            if (table.Rows.Count > 0)
+            {
+                DataRow row = table.Rows[0];
+                DataTable tb = new DataTable("DataTable1");
+                tb.Columns.Add(new DataColumn() { ColumnName = "col1", DataType = typeof(string) });
+                tb.Columns.Add(new DataColumn() { ColumnName = "col2", DataType = typeof(string) });
+                tb.Columns.Add(new DataColumn() { ColumnName = "col3", DataType = typeof(string) });
+                tb.Rows.Add(tb.NewRow());
+                tb.Rows.Add(tb.NewRow());
+                tb.Rows.Add(tb.NewRow());
+                tb.Rows.Add(tb.NewRow());
+                tb.Rows[0][0] = "车牌";
+                tb.Rows[0][1] = "种类";
+                tb.Rows[0][2] = "其他";
+                tb.Rows[1][0] = row["chepai"].ToString();
+                tb.Rows[1][1] = row["Kind"].ToString();
+                tb.Rows[1][2] = "";
+                tb.Rows[2][0] = "出厂重量";
+                tb.Rows[2][1] = "进厂重量";
+                tb.Rows[2][2] = "净重量";
+                tb.Rows[3][0] = row["InWeight"].ToString();
+                tb.Rows[3][1] = row["OutWeight"].ToString();
+                tb.Rows[3][2] = row["NetWeight"].ToString();
+
+                ReportParameter p_company = new ReportParameter("p_company", row["Company"].ToString() + "采购单");
+                ReportParameter p_outuser = new ReportParameter("p_outuser", "操作员：" + row["outXingming"].ToString());
+                ReportParameter p_outtime = new ReportParameter("p_outtime", Convert.IsDBNull(row["OutTime"]) ? "" : "时间：" + Convert.ToDateTime(row["OutTime"]).ToString("yyyy-MM-dd hh:mm"));
+                ReportParameter[] parms = new ReportParameter[] { p_company, p_outuser, p_outtime };
+                ReportDataSource source = new ReportDataSource();
+                source.Name = "DataSetRecord";
+                source.Value = tb;
+
+                MyUIReportViwer frmRPT = new MyUIReportViwer();
+                frmRPT.MainDataSource = source;
+                frmRPT.ReportParms = parms;
+                frmRPT.ReportID = "PrintSetRecordOut";
+                frmRPT.ReportPath = System.Windows.Forms.Application.StartupPath + @"\Rdlc\RdlcRecord.rdlc";
+                frmRPT.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("记录已不存在");
+            }
+        }
 
         /// <summary>
         /// 获取传感器的重量

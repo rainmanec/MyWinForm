@@ -104,7 +104,10 @@ namespace ZHBB
                     int rowIndex = dgv.CurrentCell.RowIndex;
                     if (rowIndex >= 0)
                     {
+                        this.tb_chepai.TextChanged -= new System.EventHandler(this.tb_chepai_TextChanged);
                         tb_chepai.Text = dgv.Rows[rowIndex].Cells[1].Value.ToString().Trim();
+                        this.tb_chepai.TextChanged += new System.EventHandler(this.tb_chepai_TextChanged);
+
                         tb_InTime.Text = dgv.Rows[rowIndex].Cells[2].Value.ToString().Trim();
                         tb_InWeight.Text = dgv.Rows[rowIndex].Cells[3].Value.ToString().Trim();
                         tb_cp.Text = dgv.Rows[rowIndex].Cells["Company"].Value.ToString().Trim();
@@ -357,9 +360,7 @@ namespace ZHBB
             }
             else if (dgv_out_records.Columns[e.ColumnIndex].Name == "打印")
             {
-                //FrmRecordPrint2 frm = new FrmRecordPrint2();
-                //frm.id = this.id;
-                //frm.ShowDialog();
+                Util.PrintRecord(this.id);
             }
 
         }
