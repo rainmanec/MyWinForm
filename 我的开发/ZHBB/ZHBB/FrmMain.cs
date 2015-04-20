@@ -94,6 +94,7 @@ namespace ZHBB
                 用户管理ToolStripMenuItem.Visible = false;
                 种类管理ToolStripMenuItem.Visible = false;
                 查询ToolStripMenuItem.Visible = false;
+                系统配置ToolStripMenuItem.Visible = false;
 
                 this.ActivateMdiChildren("FrmRecordIn");
                 FrmRecordIn frm = new FrmRecordIn();

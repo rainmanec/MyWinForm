@@ -90,7 +90,7 @@ namespace ZHBB
             string sql = string.Format(@"
                             SELECT 
                                 ROW_NUMBER() OVER(ORDER BY {0}) AS  '序号',
-                                {1}, SUM(NetWeight) as NetWeight 
+                                {1}, SUM(NetWeight) as '净重' 
                             FROM Records 
                             WHERE IsClose = 1 {2}
                             GROUP BY {3}
