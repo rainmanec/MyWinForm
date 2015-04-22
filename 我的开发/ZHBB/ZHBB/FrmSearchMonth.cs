@@ -58,7 +58,7 @@ namespace ZHBB
                             SELECT ISNULL(SUM(NetWeight), 0)
                             FROM Records 
                             WHERE IsClose = 1 AND OutTime >= @p_year_begin AND OutTime <= @p_year_end");
-            this.lb_sum.Text = string.Format("合计：{0}吨", SqlHelper.GetFirstCellStringBySQL(sql, p_year_begin, p_year_end));
+            this.lb_sum.Text = string.Format("净重合计：{0}吨", SqlHelper.GetFirstCellStringBySQL(sql, p_year_begin, p_year_end));
         }
 
         /// <summary>

@@ -69,9 +69,9 @@
             this.lb_sum.AutoSize = true;
             this.lb_sum.Location = new System.Drawing.Point(471, 20);
             this.lb_sum.Name = "lb_sum";
-            this.lb_sum.Size = new System.Drawing.Size(41, 12);
+            this.lb_sum.Size = new System.Drawing.Size(65, 12);
             this.lb_sum.TabIndex = 24;
-            this.lb_sum.Text = "合计：";
+            this.lb_sum.Text = "净重合计：";
             // 
             // btn_excel
             // 

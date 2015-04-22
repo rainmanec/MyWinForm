@@ -107,7 +107,7 @@ namespace ZHBB
                             FROM Records 
                             WHERE IsClose = 1 {0}
                         ", this.sql_where);
-            this.lb_sum.Text = string.Format("合计：{0}吨", SqlHelper.GetFirstCellStringBySQL(sql, this.sql_parms));
+            this.lb_sum.Text = string.Format("净重合计：{0}吨", SqlHelper.GetFirstCellStringBySQL(sql, this.sql_parms));
         }
 
         /// <summary>
