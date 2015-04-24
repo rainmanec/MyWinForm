@@ -212,17 +212,38 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZHBB.exe" size="210944">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MyUI.dll" size="12800">
+      <assemblyIdentity name="MyUI" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>EdUfWq7gKr4hLMoNdc1BQM73+cw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZHBB.exe" size="207360">
       <assemblyIdentity name="ZHBB" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>bMkx8/Bsxq4ec72MseahUtjQYTE=</dsig:DigestValue>
+        <dsig:DigestValue>7wslyW2dkwJOOjVAUBGoQfcRHjw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="Images\weight20.png" size="1005">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>2CFNrHbalVMQ6hDsfS7JuFZ2UjQ=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="project32.ico" size="5430">
     <hash>
       <dsig:Transforms>
@@ -230,15 +251,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>oOfQuZmX0qX4k4oq5PIEQU938MY=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="px.html" size="523">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>SNUGijAnj+jMkmWoSym3mw6iHWY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resource\bin\Aspose.Cells.dll" size="6570840">
@@ -304,13 +316,13 @@
       <dsig:DigestValue>C5IkqRl4Q3iok2H12+tRlxZv+2E=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="ZHBB.exe.config" size="342">
+  <file name="ZHBB.exe.config" size="533">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>tIGk12ipTbwUEak2gQXepnIIntk=</dsig:DigestValue>
+      <dsig:DigestValue>cJuzByRpccNT+ojj0yiH6wD95/c=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

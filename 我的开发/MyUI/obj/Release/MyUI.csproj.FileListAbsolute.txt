@@ -1,0 +1,8 @@
+C:\Users\Administrator\Documents\GitHub\MyWinForm\我的开发\MyUI\bin\Release\MyUI.dll
+C:\Users\Administrator\Documents\GitHub\MyWinForm\我的开发\MyUI\bin\Release\MyUI.pdb
+C:\Users\Administrator\Documents\GitHub\MyWinForm\我的开发\MyUI\obj\Release\MyUI.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\MyWinForm\我的开发\MyUI\obj\Release\MYUI.Paginator.resources
+C:\Users\Administrator\Documents\GitHub\MyWinForm\我的开发\MyUI\obj\Release\MyUI.Properties.Resources.resources
+C:\Users\Administrator\Documents\GitHub\MyWinForm\我的开发\MyUI\obj\Release\MyUI.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\GitHub\MyWinForm\我的开发\MyUI\obj\Release\MyUI.dll
+C:\Users\Administrator\Documents\GitHub\MyWinForm\我的开发\MyUI\obj\Release\MyUI.pdb
