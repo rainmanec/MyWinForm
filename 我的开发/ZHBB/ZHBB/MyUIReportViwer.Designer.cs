@@ -43,7 +43,7 @@
             this.tsb_PrintSetting});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(731, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(933, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -73,17 +73,17 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 25);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ShowToolBar = false;
-            this.reportViewer1.Size = new System.Drawing.Size(731, 401);
+            this.reportViewer1.Size = new System.Drawing.Size(933, 401);
             this.reportViewer1.TabIndex = 1;
             // 
-            // MYUIReportViwer
+            // MyUIReportViwer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 426);
+            this.ClientSize = new System.Drawing.Size(933, 426);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "MYUIReportViwer";
+            this.Name = "MyUIReportViwer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "报表打印";
             this.Load += new System.EventHandler(this.ReportViwer_Load);

@@ -216,7 +216,7 @@ namespace ZHBB
         public void refreshInRecords()
         {
             string sql = string.Format(@"
-                            SELECT TOP 100
+                            SELECT TOP 30
                                 ID,
                                 chepai as '车牌号',
                                 Company as '采购单位',

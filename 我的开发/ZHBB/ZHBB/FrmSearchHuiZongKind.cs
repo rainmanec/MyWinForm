@@ -32,6 +32,13 @@ namespace ZHBB
 
         private void FrmRecordAdd_Load(object sender, EventArgs e)
         {
+            // 时间
+            dtp_begin.Format = DateTimePickerFormat.Custom;
+            dtp_begin.CustomFormat = "yyyy'-'MM-dd HH':'mm";
+            dtp_end.Format = DateTimePickerFormat.Custom;
+            dtp_end.CustomFormat = "yyyy'-'MM-dd HH':'mm"; 
+            dtp_begin.Value = Util.DateTimeToDayBegin(DateTime.Now);     // 开始时间
+            // other
             this.RefreshRecords();
         }
 
@@ -41,8 +48,10 @@ namespace ZHBB
         /// </summary>
         public void SearchCdnInit()
         {
-            DateTime time_begin = Util.DateTimeToDayBegin(this.dtp_begin.Value);
-            DateTime time_end = Util.DateTimeToDayEnd(this.dtp_end.Value);
+            //DateTime time_begin = Util.DateTimeToDayBegin(this.dtp_begin.Value);
+            //DateTime time_end = Util.DateTimeToDayEnd(this.dtp_end.Value);
+            DateTime time_begin = this.dtp_begin.Value;
+            DateTime time_end = this.dtp_end.Value;
             bool IsChepai = this.cb_chepai.Checked;
             bool IsCp = this.cb_cp.Checked;
 

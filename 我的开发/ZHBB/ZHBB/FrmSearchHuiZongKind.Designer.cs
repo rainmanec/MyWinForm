@@ -64,7 +64,7 @@
             // lb_sum
             // 
             this.lb_sum.AutoSize = true;
-            this.lb_sum.Location = new System.Drawing.Point(360, 76);
+            this.lb_sum.Location = new System.Drawing.Point(437, 76);
             this.lb_sum.Name = "lb_sum";
             this.lb_sum.Size = new System.Drawing.Size(65, 12);
             this.lb_sum.TabIndex = 24;
@@ -87,7 +87,7 @@
             this.cb_chepai.AutoSize = true;
             this.cb_chepai.Checked = true;
             this.cb_chepai.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_chepai.Location = new System.Drawing.Point(226, 44);
+            this.cb_chepai.Location = new System.Drawing.Point(264, 44);
             this.cb_chepai.Name = "cb_chepai";
             this.cb_chepai.Size = new System.Drawing.Size(60, 16);
             this.cb_chepai.TabIndex = 22;
@@ -97,9 +97,9 @@
             // btn_excel
             // 
             this.btn_excel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_excel.Location = new System.Drawing.Point(226, 70);
+            this.btn_excel.Location = new System.Drawing.Point(264, 70);
             this.btn_excel.Name = "btn_excel";
-            this.btn_excel.Size = new System.Drawing.Size(116, 23);
+            this.btn_excel.Size = new System.Drawing.Size(155, 23);
             this.btn_excel.TabIndex = 21;
             this.btn_excel.Text = "导出Excel";
             this.btn_excel.UseVisualStyleBackColor = true;
@@ -107,16 +107,16 @@
             // 
             // dtp_end
             // 
-            this.dtp_end.Location = new System.Drawing.Point(226, 10);
+            this.dtp_end.Location = new System.Drawing.Point(264, 10);
             this.dtp_end.Name = "dtp_end";
-            this.dtp_end.Size = new System.Drawing.Size(116, 21);
+            this.dtp_end.Size = new System.Drawing.Size(155, 21);
             this.dtp_end.TabIndex = 11;
             // 
             // dtp_begin
             // 
             this.dtp_begin.Location = new System.Drawing.Point(91, 10);
             this.dtp_begin.Name = "dtp_begin";
-            this.dtp_begin.Size = new System.Drawing.Size(120, 21);
+            this.dtp_begin.Size = new System.Drawing.Size(155, 21);
             this.dtp_begin.TabIndex = 10;
             // 
             // label5
@@ -134,7 +134,7 @@
             this.btn_submit.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_submit.Location = new System.Drawing.Point(91, 70);
             this.btn_submit.Name = "btn_submit";
-            this.btn_submit.Size = new System.Drawing.Size(120, 23);
+            this.btn_submit.Size = new System.Drawing.Size(155, 23);
             this.btn_submit.TabIndex = 5;
             this.btn_submit.Text = "提交";
             this.btn_submit.UseVisualStyleBackColor = true;

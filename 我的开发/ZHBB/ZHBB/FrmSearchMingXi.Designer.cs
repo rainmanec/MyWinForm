@@ -71,7 +71,7 @@
             // 
             // paginator1
             // 
-            this.paginator1.Location = new System.Drawing.Point(375, 130);
+            this.paginator1.Location = new System.Drawing.Point(429, 130);
             this.paginator1.Name = "paginator1";
             this.paginator1.Size = new System.Drawing.Size(389, 23);
             this.paginator1.TabIndex = 22;
@@ -85,21 +85,21 @@
             this.cb_kind.FormattingEnabled = true;
             this.cb_kind.Location = new System.Drawing.Point(91, 98);
             this.cb_kind.Name = "cb_kind";
-            this.cb_kind.Size = new System.Drawing.Size(257, 20);
+            this.cb_kind.Size = new System.Drawing.Size(314, 20);
             this.cb_kind.TabIndex = 20;
             // 
             // dtp_end
             // 
-            this.dtp_end.Location = new System.Drawing.Point(232, 10);
+            this.dtp_end.Location = new System.Drawing.Point(255, 10);
             this.dtp_end.Name = "dtp_end";
-            this.dtp_end.Size = new System.Drawing.Size(116, 21);
+            this.dtp_end.Size = new System.Drawing.Size(150, 21);
             this.dtp_end.TabIndex = 11;
             // 
             // dtp_begin
             // 
             this.dtp_begin.Location = new System.Drawing.Point(91, 10);
             this.dtp_begin.Name = "dtp_begin";
-            this.dtp_begin.Size = new System.Drawing.Size(120, 21);
+            this.dtp_begin.Size = new System.Drawing.Size(150, 21);
             this.dtp_begin.TabIndex = 10;
             // 
             // label5
@@ -116,7 +116,7 @@
             this.tb_cp.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tb_cp.Location = new System.Drawing.Point(91, 68);
             this.tb_cp.Name = "tb_cp";
-            this.tb_cp.Size = new System.Drawing.Size(257, 21);
+            this.tb_cp.Size = new System.Drawing.Size(314, 21);
             this.tb_cp.TabIndex = 8;
             this.tb_cp.TextChanged += new System.EventHandler(this.tb_cp_TextChanged);
             this.tb_cp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cp_KeyDown);
@@ -137,7 +137,7 @@
             this.btn_submit.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_submit.Location = new System.Drawing.Point(91, 130);
             this.btn_submit.Name = "btn_submit";
-            this.btn_submit.Size = new System.Drawing.Size(257, 23);
+            this.btn_submit.Size = new System.Drawing.Size(314, 23);
             this.btn_submit.TabIndex = 5;
             this.btn_submit.Text = "提交";
             this.btn_submit.UseVisualStyleBackColor = true;
@@ -148,7 +148,7 @@
             this.tb_chepai.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tb_chepai.Location = new System.Drawing.Point(91, 39);
             this.tb_chepai.Name = "tb_chepai";
-            this.tb_chepai.Size = new System.Drawing.Size(257, 21);
+            this.tb_chepai.Size = new System.Drawing.Size(314, 21);
             this.tb_chepai.TabIndex = 2;
             this.tb_chepai.TextChanged += new System.EventHandler(this.tb_chepai_TextChanged);
             this.tb_chepai.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_chepai_KeyDown);

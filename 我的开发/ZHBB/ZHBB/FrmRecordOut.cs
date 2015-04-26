@@ -306,7 +306,7 @@ namespace ZHBB
                                 InTime as '进厂时间',
                                 OutTime as '出厂时间'
                             FROM Records 
-                            WHERE IsClose = 1 ORDER BY OutTime DESC", AppData.uname);
+                            WHERE IsClose = 1 AND OutUname = '{0}' ORDER BY OutTime DESC", AppData.uname);
             dgv_out_records.DataSource = SqlHelper.GetDataTableBySQL(sql);
 
 

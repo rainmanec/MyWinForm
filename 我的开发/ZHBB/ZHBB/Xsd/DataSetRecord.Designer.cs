@@ -285,6 +285,14 @@ namespace ZHBB.Xsd {
             
             private global::System.Data.DataColumn columncol3;
             
+            private global::System.Data.DataColumn columncol4;
+            
+            private global::System.Data.DataColumn columncol5;
+            
+            private global::System.Data.DataColumn columncol6;
+            
+            private global::System.Data.DataColumn columncol7;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DataTable1DataTable() {
@@ -344,6 +352,38 @@ namespace ZHBB.Xsd {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn col4Column {
+                get {
+                    return this.columncol4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn col5Column {
+                get {
+                    return this.columncol5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn col6Column {
+                get {
+                    return this.columncol6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn col7Column {
+                get {
+                    return this.columncol7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -379,12 +419,16 @@ namespace ZHBB.Xsd {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string col1, string col2, string col3) {
+            public DataTable1Row AddDataTable1Row(string col1, string col2, string col3, string col4, string col5, string col6, string col7) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         col1,
                         col2,
-                        col3};
+                        col3,
+                        col4,
+                        col5,
+                        col6,
+                        col7};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -410,6 +454,10 @@ namespace ZHBB.Xsd {
                 this.columncol1 = base.Columns["col1"];
                 this.columncol2 = base.Columns["col2"];
                 this.columncol3 = base.Columns["col3"];
+                this.columncol4 = base.Columns["col4"];
+                this.columncol5 = base.Columns["col5"];
+                this.columncol6 = base.Columns["col6"];
+                this.columncol7 = base.Columns["col7"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -421,6 +469,14 @@ namespace ZHBB.Xsd {
                 base.Columns.Add(this.columncol2);
                 this.columncol3 = new global::System.Data.DataColumn("col3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncol3);
+                this.columncol4 = new global::System.Data.DataColumn("col4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncol4);
+                this.columncol5 = new global::System.Data.DataColumn("col5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncol5);
+                this.columncol6 = new global::System.Data.DataColumn("col6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncol6);
+                this.columncol7 = new global::System.Data.DataColumn("col7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncol7);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -611,6 +667,70 @@ namespace ZHBB.Xsd {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string col4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.col4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“DataTable1”中列“col4”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.col4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string col5 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.col5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“DataTable1”中列“col5”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.col5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string col6 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.col6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“DataTable1”中列“col6”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.col6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string col7 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.col7Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“DataTable1”中列“col7”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.col7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Iscol1Null() {
                 return this.IsNull(this.tableDataTable1.col1Column);
             }
@@ -643,6 +763,54 @@ namespace ZHBB.Xsd {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setcol3Null() {
                 this[this.tableDataTable1.col3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscol4Null() {
+                return this.IsNull(this.tableDataTable1.col4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcol4Null() {
+                this[this.tableDataTable1.col4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscol5Null() {
+                return this.IsNull(this.tableDataTable1.col5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcol5Null() {
+                this[this.tableDataTable1.col5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscol6Null() {
+                return this.IsNull(this.tableDataTable1.col6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcol6Null() {
+                this[this.tableDataTable1.col6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscol7Null() {
+                return this.IsNull(this.tableDataTable1.col7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcol7Null() {
+                this[this.tableDataTable1.col7Column] = global::System.Convert.DBNull;
             }
         }
         

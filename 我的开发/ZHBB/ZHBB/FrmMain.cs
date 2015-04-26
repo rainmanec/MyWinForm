@@ -69,14 +69,15 @@ namespace ZHBB
         /// </summary>
         /// <param name="tag">窗体的类名</param>
         /// <returns></returns>
-        public bool ActivateMdiChildren(string tag)
+        public bool CloseMdiChildren(string tag)
         {
             foreach (Form frm in this.MdiChildren)
             {
                 string type = frm.GetType().ToString();
                 if (type.Substring(type.LastIndexOf(".") + 1) == tag)
                 {
-                    frm.Activate();
+                    //frm.Activate();
+                    frm.Close();
                     return true;
                 }
             }
@@ -96,7 +97,7 @@ namespace ZHBB
                 查询ToolStripMenuItem.Visible = false;
                 系统配置ToolStripMenuItem.Visible = false;
 
-                this.ActivateMdiChildren("FrmRecordIn");
+                this.CloseMdiChildren("FrmRecordIn");
                 FrmRecordIn frm = new FrmRecordIn();
                 frm.WindowState = FormWindowState.Maximized;
                 frm.MdiParent = this;
@@ -104,7 +105,7 @@ namespace ZHBB
             }
             else
             {
-                this.ActivateMdiChildren("FrmSearchMingXi");
+                this.CloseMdiChildren("FrmSearchMingXi");
                 FrmSearchMingXi frm = new FrmSearchMingXi();
                 frm.WindowState = FormWindowState.Maximized;
                 frm.MdiParent = this;
@@ -147,125 +148,101 @@ namespace ZHBB
 
         private void 车辆进厂ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!this.ActivateMdiChildren("FrmRecordIn"))
-            {
-                FrmRecordIn frm = new FrmRecordIn();
-                frm.WindowState = FormWindowState.Maximized;
-                frm.MdiParent = this;
-                frm.Show();
-            }
+            this.CloseMdiChildren("FrmRecordIn");
+            FrmRecordIn frm = new FrmRecordIn();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void 车辆出厂ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!this.ActivateMdiChildren("FrmRecordOut"))
-            {
-                FrmRecordOut frm = new FrmRecordOut();
-                frm.WindowState = FormWindowState.Maximized;
-                frm.MdiParent = this;
-                frm.Show();
-            }
+            this.CloseMdiChildren("FrmRecordOut");
+            FrmRecordOut frm = new FrmRecordOut();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void 用户管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!this.ActivateMdiChildren("FrmUserList"))
-            {
-                FrmUserList frm = new FrmUserList();
-                frm.WindowState = FormWindowState.Maximized;
-                frm.MdiParent = this;
-                frm.Show();
-            }
+            this.CloseMdiChildren("FrmUserList");
+            FrmUserList frm = new FrmUserList();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void 车辆管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!this.ActivateMdiChildren("FrmCarList"))
-            {
-                FrmCarList frm = new FrmCarList();
-                frm.WindowState = FormWindowState.Maximized;
-                frm.MdiParent = this;
-                frm.Show();
-            }
+            this.CloseMdiChildren("FrmCarList");
+            FrmCarList frm = new FrmCarList();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void 种类管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!this.ActivateMdiChildren("FrmKindList"))
-            {
-                FrmKindList frm = new FrmKindList();
-                frm.WindowState = FormWindowState.Maximized;
-                frm.MdiParent = this;
-                frm.Show();
-            }
-
+            this.CloseMdiChildren("FrmKindList");
+            FrmKindList frm = new FrmKindList();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void 采购单位管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!this.ActivateMdiChildren("FrmCompanyList"))
-            {
-                FrmCompanyList frm = new FrmCompanyList();
-                frm.WindowState = FormWindowState.Maximized;
-                frm.MdiParent = this;
-                frm.Show();
-            }
-
+            this.CloseMdiChildren("FrmCompanyList");
+            FrmCompanyList frm = new FrmCompanyList();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void 明细查询ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!this.ActivateMdiChildren("FrmSearchMingXi"))
-            {
-                FrmSearchMingXi frm = new FrmSearchMingXi();
-                frm.WindowState = FormWindowState.Maximized;
-                frm.MdiParent = this;
-                frm.Show();
-            }
+            this.CloseMdiChildren("FrmSearchMingXi");
+            FrmSearchMingXi frm = new FrmSearchMingXi();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void 汇总查询ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!this.ActivateMdiChildren("FrmSearchHuiZongKind"))
-            {
-                FrmSearchHuiZongKind frm = new FrmSearchHuiZongKind();
-                frm.WindowState = FormWindowState.Maximized;
-                frm.MdiParent = this;
-                frm.Show();
-            }
+            this.CloseMdiChildren("FrmSearchHuiZongKind");
+            FrmSearchHuiZongKind frm = new FrmSearchHuiZongKind();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void 年报ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!this.ActivateMdiChildren("FrmSearchYear"))
-            {
-                FrmSearchYear frm = new FrmSearchYear();
-                frm.WindowState = FormWindowState.Maximized;
-                frm.MdiParent = this;
-                frm.Show();
-            }
+            this.CloseMdiChildren("FrmSearchYear");
+            FrmSearchYear frm = new FrmSearchYear();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void 月报ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!this.ActivateMdiChildren("FrmSearchMonth"))
-            {
-                FrmSearchMonth frm = new FrmSearchMonth();
-                frm.WindowState = FormWindowState.Maximized;
-                frm.MdiParent = this;
-                frm.Show();
-            }
+            this.CloseMdiChildren("FrmSearchMonth");
+            FrmSearchMonth frm = new FrmSearchMonth();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void 未出厂记录ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!this.ActivateMdiChildren("FrmSearchNotOut"))
-            {
-                FrmSearchNotOut frm = new FrmSearchNotOut();
-                frm.WindowState = FormWindowState.Maximized;
-                frm.MdiParent = this;
-                frm.Show();
-            }
+            this.CloseMdiChildren("FrmSearchNotOut");
+            FrmSearchNotOut frm = new FrmSearchNotOut();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void 系统配置ToolStripMenuItem_Click(object sender, EventArgs e)

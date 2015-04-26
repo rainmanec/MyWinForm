@@ -36,10 +36,16 @@ namespace ZHBB
 
         private void FrmRecordAdd_Load(object sender, EventArgs e)
         {
+            // 时间
+            dtp_begin.Format = DateTimePickerFormat.Custom;
+            dtp_begin.CustomFormat = "yyyy'-'MM-dd HH':'mm";
+            dtp_end.Format = DateTimePickerFormat.Custom;
+            dtp_end.CustomFormat = "yyyy'-'MM-dd HH':'mm";
+            // other
             this.p_car = new Point(tb_chepai.Left, tb_chepai.Top + tb_chepai.Height);   // 车辆文本框Location
             this.p_cp = new Point(tb_cp.Left, tb_cp.Top + tb_cp.Height);                // 单位文本框Location
             dgv_cars.BorderStyle = BorderStyle.None;
-            dtp_begin.Value = DateTime.Now.AddDays(-1);                                 // 开始日期
+            dtp_begin.Value = Util.DateTimeToDayBegin(DateTime.Now);                    // 开始日期
             Util.InitComboBox(cb_kind, "Kinds", "Title", true);                         // 料种
             this.LoadData();
         }
@@ -50,8 +56,10 @@ namespace ZHBB
         /// </summary>
         public void SearchCdnInit()
         {
-            DateTime time_begin = Util.DateTimeToDayBegin(this.dtp_begin.Value);
-            DateTime time_end = Util.DateTimeToDayEnd(this.dtp_end.Value);
+            //DateTime time_begin = Util.DateTimeToDayBegin(this.dtp_begin.Value);
+            //DateTime time_end = Util.DateTimeToDayEnd(this.dtp_end.Value);
+            DateTime time_begin = this.dtp_begin.Value;
+            DateTime time_end = this.dtp_end.Value;
             string chepai = this.tb_chepai.Text.Trim();
             string kind = this.cb_kind.Text.Trim();
             string company = this.tb_cp.Text.Trim();

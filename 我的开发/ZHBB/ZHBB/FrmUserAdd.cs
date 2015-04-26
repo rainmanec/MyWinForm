@@ -70,7 +70,7 @@ namespace ZHBB
             SqlParameter p_password = Util.NewSqlParameter("@p_password", SqlDbType.VarChar, password, 50);
             SqlParameter p_phone = Util.NewSqlParameter("@p_phone", SqlDbType.VarChar, tb_phone.Text,50);
             SqlParameter p_beizhu = Util.NewSqlParameter("@p_beizhu", SqlDbType.VarChar, tb_beizhu.Text, 50);
-            SqlParameter p_roleid = Util.NewSqlParameter("@p_roleid", SqlDbType.TinyInt, (cb_roleid.Text.Trim() == "录入人员") ? 0 : 1);
+            SqlParameter p_roleid = Util.NewSqlParameter("@p_roleid", SqlDbType.TinyInt, (cb_roleid.Text.Trim() == "操作员") ? 0 : 1);
 
             /* 判断登陆名是否重复 */
             string sql_count = "select COUNT(*) as total from Users where uname = @p_uname";
